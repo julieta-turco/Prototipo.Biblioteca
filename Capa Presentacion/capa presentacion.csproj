@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Editorial.cs" />
+    <Compile Include="Editorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Editorial.Designer.cs">
       <DependentUpon>Editorial.cs</DependentUpon>
     </Compile>

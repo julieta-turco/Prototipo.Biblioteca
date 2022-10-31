@@ -19,4 +19,10 @@ namespace capa_Entidades
         bool ID_Estado;
         #endregion
     }
+    class Autor
+    {
+    }
+    class Genero
+    {
+    }
 }
