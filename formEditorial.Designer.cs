@@ -1,7 +1,7 @@
 ﻿
-namespace Entidades
+namespace capaPresentacion
 {
-    partial class Editorial
+    partial class formEditorial
     {
         /// <summary>
         /// Required designer variable.

@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Entidades
+namespace capaPresentacion
 {
-    public partial class formLibros : Form
+    public partial class formGenero : Form
     {
-        public formLibros()
+        public formGenero()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Entidades
+namespace capaPresentacion
 {
     public partial class PPrin : Form
     {

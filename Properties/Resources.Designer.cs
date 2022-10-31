@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 
-namespace Entidades.Properties
+namespace capaPresentacion.Properties
 {
     /// <summary>
     ///   Clase de recurso fuertemente tipado para buscar cadenas traducidas, etc.

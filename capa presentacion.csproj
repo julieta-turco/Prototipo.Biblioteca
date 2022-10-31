@@ -46,9 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Editorial.cs" />
-    <Compile Include="Editorial.Designer.cs">
-      <DependentUpon>Editorial.cs</DependentUpon>
+    <Compile Include="formListaLibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formListaLibros.Designer.cs">
+      <DependentUpon>formListaLibros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formEditorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formEditorial.Designer.cs">
+      <DependentUpon>formEditorial.cs</DependentUpon>
     </Compile>
     <Compile Include="formGenero.cs">
       <SubType>Form</SubType>
@@ -70,6 +78,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="formGenero.resx">
+      <DependentUpon>formGenero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formListaLibros.resx">
+      <DependentUpon>formListaLibros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formLibros.resx">
       <DependentUpon>formLibros.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +111,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="capa Datos\capa Datos.csproj">
+      <Project>{15af1a1c-4b90-4778-9123-8a06f42db6fc}</Project>
+      <Name>capa Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="capa Entidades\capa Entidades.csproj">
+      <Project>{b819b19f-4e4b-45eb-aff4-d80223bafde3}</Project>
+      <Name>capa Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

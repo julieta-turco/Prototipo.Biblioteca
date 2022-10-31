@@ -1,5 +1,5 @@
 ﻿
-namespace Entidades
+namespace capaPresentacion
 {
     partial class PPrin
     {

@@ -6,23 +6,125 @@ using System.Threading.Tasks;
 
 namespace capa_Entidades
 {
-    class Libros
+   public class Libros
     {
         #region atributos
         protected
-            int ID_libro;
+            int Id_Libro;
         string Titulo;
         string Ubicacion;
-        DateTime fechaIng = new DateTime();
-        int ID_Autor;
-        int ID_Editorial;
-        bool ID_Estado;
+        bool Disponible;
+        //int ID_Autor;
+        //int ID_Editorial;
+        //int ID_Estado;
+        #endregion
+
+        #region propiedades
+        public int P_IDLibro
+        {
+            set { Id_Libro = value; }
+            get { return Id_Libro; }
+        }
+        public string P_Titulo
+        {
+            set { Titulo = value; }
+            get { return Titulo; }
+        }
+        public string P_Ubicacion
+        {
+            set { Ubicacion = value; }
+            get { return Ubicacion; }
+        }
+        public bool P_Disponible
+        {
+            set { Disponible = value; }
+            get { return Disponible; }
+        }
+        #endregion
+        #region Constructor
+        public Libros()
+        {
+        }
+        public Libros(int IdL, string Tit, string Ubi, bool Disp )
+        {
+            Id_Libro = IdL;
+            Titulo = Tit;
+            Ubicacion = Ubi;
+            Disponible = Disp;
+        }
+        #endregion
+
+        #region Metodos
+
         #endregion
     }
-    class Autor
+    public class Autor
     {
+        #region atributos
+        protected int Id_Autor;
+        protected string Nombre;
+        protected string Apellido;
+        #endregion
+
+        #region Propiedades
+        public int P_IDAutor
+        {
+            set { Id_Autor = value; }
+            get { return Id_Autor; }
+        }
+        public string P_Nombre
+        {
+            set { Nombre = value; }
+            get { return Nombre; }
+        }
+        public string P_Apellido
+        {
+            set { Apellido = value; }
+            get { return Apellido; }
+        }
+        #endregion
+
+        #region Contructor
+        public Autor()
+        {
+        }
+        public Autor(int IdA, string Nom, string Ape )
+        {
+            Id_Autor = IdA;
+            Nombre = Nom;
+            Apellido = Ape;
+        }
+        #endregion
     }
-    class Genero
+    public class Generito
     {
+        protected int Id_Genero;
+        protected string Genero;
+
+        #region Propiedades
+        public int P_IDGenero
+        {
+            set { Id_Genero = value; }
+            get { return Id_Genero; }
+        }
+        public string P_Generito
+        {
+            set { Genero = value; }
+            get { return Genero; }
+        }
+        #endregion
+
+        #region Constructor
+        public Generito()
+        {
+        }
+        public Generito(int IdG, string Gen, string Ape)
+        {
+            Id_Genero = IdG;
+            Genero = Gen;
+        }
+        #endregion
+
     }
+
 }

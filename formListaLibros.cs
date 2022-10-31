@@ -7,14 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using capa_Entidades;
+using capa_Datos;
 
-namespace Entidades
+
+namespace capaPresentacion
 {
-    public partial class formGenero : Form
+    public partial class formListaLibros : Form
     {
-        public formGenero()
+        public formListaLibros()
         {
             InitializeComponent();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
