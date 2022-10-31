@@ -52,7 +52,12 @@
     <Compile Include="Editorial.Designer.cs">
       <DependentUpon>Editorial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Libros.cs" />
+    <Compile Include="formGenero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formGenero.Designer.cs">
+      <DependentUpon>formGenero.cs</DependentUpon>
+    </Compile>
     <Compile Include="PPrin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="formLibros.resx">
+      <DependentUpon>formLibros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PPrin.resx">
       <DependentUpon>PPrin.cs</DependentUpon>
     </EmbeddedResource>

@@ -21,5 +21,23 @@ namespace Entidades
         {
 
         }
+
+        private void generoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formGenero frm = new formGenero();
+            frm.Show();
+        }
+
+        private void librosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            formLibros frmLib = new formLibros();
+            frmLib.Show();
+        }
+
+        //private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        //{
+
+        //}
     }
 }

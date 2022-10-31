@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Entidades
 {
-    public partial class formLibros : Form
+    public partial class formGenero : Form
     {
-        public formLibros()
+        public formGenero()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

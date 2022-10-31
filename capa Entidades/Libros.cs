@@ -4,17 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entidades
+namespace capa_Entidades
 {
     class Libros
     {
         #region atributos
         protected
             int ID_libro;
-            string Titulo;
+        string Titulo;
         string Ubicacion;
         DateTime fechaIng = new DateTime();
+        int ID_Autor;
+        int ID_Editorial;
+        bool ID_Estado;
         #endregion
-
     }
 }

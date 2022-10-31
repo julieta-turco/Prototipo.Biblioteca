@@ -34,7 +34,12 @@ namespace Entidades
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.conexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.librosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editorialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sociosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,15 +76,54 @@ namespace Entidades
             // 
             // entidadesToolStripMenuItem
             // 
+            this.entidadesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.librosToolStripMenuItem,
+            this.sociosToolStripMenuItem});
             this.entidadesToolStripMenuItem.Name = "entidadesToolStripMenuItem";
             this.entidadesToolStripMenuItem.Size = new System.Drawing.Size(105, 29);
             this.entidadesToolStripMenuItem.Text = "Entidades";
+            // 
+            // librosToolStripMenuItem
+            // 
+            this.librosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editorialToolStripMenuItem,
+            this.generoToolStripMenuItem,
+            this.autorToolStripMenuItem});
+            this.librosToolStripMenuItem.Name = "librosToolStripMenuItem";
+            this.librosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.librosToolStripMenuItem.Text = "Libros";
+            this.librosToolStripMenuItem.Click += new System.EventHandler(this.librosToolStripMenuItem_Click);
+            // 
+            // editorialToolStripMenuItem
+            // 
+            this.editorialToolStripMenuItem.Name = "editorialToolStripMenuItem";
+            this.editorialToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
+            this.editorialToolStripMenuItem.Text = "editorial";
+            // 
+            // generoToolStripMenuItem
+            // 
+            this.generoToolStripMenuItem.Name = "generoToolStripMenuItem";
+            this.generoToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
+            this.generoToolStripMenuItem.Text = "genero";
+            this.generoToolStripMenuItem.Click += new System.EventHandler(this.generoToolStripMenuItem_Click);
+            // 
+            // autorToolStripMenuItem
+            // 
+            this.autorToolStripMenuItem.Name = "autorToolStripMenuItem";
+            this.autorToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
+            this.autorToolStripMenuItem.Text = "Autor";
             // 
             // prestamosToolStripMenuItem
             // 
             this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
             this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(112, 29);
             this.prestamosToolStripMenuItem.Text = "prestamos";
+            // 
+            // sociosToolStripMenuItem
+            // 
+            this.sociosToolStripMenuItem.Name = "sociosToolStripMenuItem";
+            this.sociosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.sociosToolStripMenuItem.Text = "Socios";
             // 
             // PPrin
             // 
@@ -106,6 +150,11 @@ namespace Entidades
         private System.Windows.Forms.ToolStripMenuItem conexionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entidadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prestamosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem librosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editorialToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem autorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sociosToolStripMenuItem;
     }
 }
 
