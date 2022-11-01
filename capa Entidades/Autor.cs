@@ -1,0 +1,48 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace capa_Entidades
+{
+    class Autor
+    {
+        #region atributos
+        protected int Id_Autor;
+        protected string Nombre;
+        protected string Apellido;
+        #endregion
+
+        #region Propiedades
+        public int P_IDAutor
+        {
+            set { Id_Autor = value; }
+            get { return Id_Autor; }
+        }
+        public string P_Nombre
+        {
+            set { Nombre = value; }
+            get { return Nombre; }
+        }
+        public string P_Apellido
+        {
+            set { Apellido = value; }
+            get { return Apellido; }
+        }
+        #endregion
+
+        #region Contructor
+        public Autor()
+        {
+        }
+        public Autor(int IdA, string Nom, string Ape)
+        {
+            Id_Autor = IdA;
+            Nombre = Nom;
+            Apellido = Ape;
+        }
+        #endregion
+    }
+}
+
