@@ -38,7 +38,6 @@ namespace capaPresentacion
 
         private void conexionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

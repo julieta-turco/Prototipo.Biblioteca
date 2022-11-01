@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace capaPresentacion
+namespace Entidades
 {
-    public partial class formGenero : Form
+    public partial class formAutor : Form
     {
-        public formGenero()
+        public formAutor()
         {
             InitializeComponent();
         }

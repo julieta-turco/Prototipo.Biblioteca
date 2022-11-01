@@ -14,9 +14,9 @@ namespace capa_Entidades
         string Titulo;
         string Ubicacion;
         bool Disponible;
-        //int ID_Autor;
-        //int ID_Editorial;
-        //int ID_Estado;
+        int ID_Autor;
+        int ID_Editorial;
+        int ID_Genero;
         #endregion
 
         #region propiedades
@@ -58,73 +58,73 @@ namespace capa_Entidades
 
         #endregion
     }
-    public class Autor
-    {
-        #region atributos
-        protected int Id_Autor;
-        protected string Nombre;
-        protected string Apellido;
-        #endregion
+    //public class Autor
+    //{
+    //    #region atributos
+    //    protected int Id_Autor;
+    //    protected string Nombre;
+    //    protected string Apellido;
+    //    #endregion
 
-        #region Propiedades
-        public int P_IDAutor
-        {
-            set { Id_Autor = value; }
-            get { return Id_Autor; }
-        }
-        public string P_Nombre
-        {
-            set { Nombre = value; }
-            get { return Nombre; }
-        }
-        public string P_Apellido
-        {
-            set { Apellido = value; }
-            get { return Apellido; }
-        }
-        #endregion
+    //    #region Propiedades
+    //    public int P_IDAutor
+    //    {
+    //        set { Id_Autor = value; }
+    //        get { return Id_Autor; }
+    //    }
+    //    public string P_Nombre
+    //    {
+    //        set { Nombre = value; }
+    //        get { return Nombre; }
+    //    }
+    //    public string P_Apellido
+    //    {
+    //        set { Apellido = value; }
+    //        get { return Apellido; }
+    //    }
+    //    #endregion
 
-        #region Contructor
-        public Autor()
-        {
-        }
-        public Autor(int IdA, string Nom, string Ape )
-        {
-            Id_Autor = IdA;
-            Nombre = Nom;
-            Apellido = Ape;
-        }
-        #endregion
-    }
-    public class Generito
-    {
-        protected int Id_Genero;
-        protected string Genero;
+    //    #region Contructor
+    //    public Autor()
+    //    {
+    //    }
+    //    public Autor(int IdA, string Nom, string Ape )
+    //    {
+    //        Id_Autor = IdA;
+    //        Nombre = Nom;
+    //        Apellido = Ape;
+    //    }
+    //    #endregion
+    //}
+    //public class Genero
+    //{
+    //    protected int Id_Genero;
+    //    protected string Generito;
 
-        #region Propiedades
-        public int P_IDGenero
-        {
-            set { Id_Genero = value; }
-            get { return Id_Genero; }
-        }
-        public string P_Generito
-        {
-            set { Genero = value; }
-            get { return Genero; }
-        }
-        #endregion
+    //    #region Propiedades
+    //    public int P_IDGenero
+    //    {
+    //        set { Id_Genero = value; }
+    //        get { return Id_Genero; }
+    //    }
+    //    public string P_Generito
+    //    {
+    //        set { Generito = value; }
+    //        get { return Generito; }
+    //    }
+    //    #endregion
 
-        #region Constructor
-        public Generito()
-        {
-        }
-        public Generito(int IdG, string Gen, string Ape)
-        {
-            Id_Genero = IdG;
-            Genero = Gen;
-        }
-        #endregion
+    //    #region Constructor
+    //    public Genero()
+    //    {
+    //    }
+    //    public Genero(int IdG, string Gen, string Ape)
+    //    {
+    //        Id_Genero = IdG;
+    //        Generito = Gen;
+    //    }
+    //    #endregion
 
-    }
+    //}
 
 }

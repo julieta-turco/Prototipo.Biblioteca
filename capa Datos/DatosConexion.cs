@@ -8,10 +8,10 @@ using System.Data.OleDb;
 
 namespace capaDatos
 {
-    class DatosConexion
+    public class DatosConexion
     {
-        public OleDbConnection conexion;
-        public string cadenaConexion = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\juli_\OneDrive\Escritorio\source\repos\Prototipo Biblioteca\Base de Datos - Biblioteca.accdb";
+        protected OleDbConnection conexion;
+        protected string cadenaConexion = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\juli_\OneDrive\Escritorio\source\repos\Prototipo Biblioteca\Base de Datos - Biblioteca.accdb";
 
         public DatosConexion()
         {

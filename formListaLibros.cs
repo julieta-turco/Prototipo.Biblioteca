@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using capa_Entidades;
-using capa_Datos;
+using capaDatos;
 
 
 namespace capaPresentacion
