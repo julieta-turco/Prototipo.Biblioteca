@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace capa_Entidades
 {
-    public class Genero
+    class Genero
     {
         private int Id_Genero;
         private string Generito;

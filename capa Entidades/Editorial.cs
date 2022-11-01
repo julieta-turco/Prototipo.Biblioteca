@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace capa_Entidades
 {
-    public class Editorial
+    class Editorial
     {
         private
-            int Id_Editorial;
+    int Id_Editorial;
         string Nombre;
         string Direccion;
         long Numero;
@@ -49,7 +49,7 @@ namespace capa_Entidades
         }
         public Editorial(int IdE, string Nome, string Dire, int Num, string Email)
         {
-            Id_Editorial = IdL;
+            Id_Editorial = IdE;
             Nombre = Nome;
             Direccion = Dire;
             Numero = Num;

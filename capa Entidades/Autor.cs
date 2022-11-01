@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace capa_Entidades
 {
-    public class Autor
+    class Autor
     {
         #region atributos
         private int Id_Autor;
@@ -45,4 +45,3 @@ namespace capa_Entidades
         #endregion
     }
 }
-
