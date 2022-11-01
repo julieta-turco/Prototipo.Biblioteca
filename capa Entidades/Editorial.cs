@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace capa_Entidades
 {
-    class Editorial
+    public class Editorial
     {
         private
             int Id_Editorial;

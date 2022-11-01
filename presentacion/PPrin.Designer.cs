@@ -38,8 +38,8 @@ namespace capaPresentacion
             this.editorialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sociosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sociosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +73,6 @@ namespace capaPresentacion
             this.conexionToolStripMenuItem.Name = "conexionToolStripMenuItem";
             this.conexionToolStripMenuItem.Size = new System.Drawing.Size(102, 29);
             this.conexionToolStripMenuItem.Text = "Conexion";
-            this.conexionToolStripMenuItem.Click += new System.EventHandler(this.conexionToolStripMenuItem_Click);
             // 
             // entidadesToolStripMenuItem
             // 
@@ -91,7 +90,7 @@ namespace capaPresentacion
             this.generoToolStripMenuItem,
             this.autorToolStripMenuItem});
             this.librosToolStripMenuItem.Name = "librosToolStripMenuItem";
-            this.librosToolStripMenuItem.Size = new System.Drawing.Size(166, 34);
+            this.librosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.librosToolStripMenuItem.Text = "Libros";
             this.librosToolStripMenuItem.Click += new System.EventHandler(this.librosToolStripMenuItem_Click);
             // 
@@ -114,17 +113,17 @@ namespace capaPresentacion
             this.autorToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
             this.autorToolStripMenuItem.Text = "Autor";
             // 
-            // sociosToolStripMenuItem
-            // 
-            this.sociosToolStripMenuItem.Name = "sociosToolStripMenuItem";
-            this.sociosToolStripMenuItem.Size = new System.Drawing.Size(166, 34);
-            this.sociosToolStripMenuItem.Text = "Socios";
-            // 
             // prestamosToolStripMenuItem
             // 
             this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
             this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(112, 29);
             this.prestamosToolStripMenuItem.Text = "prestamos";
+            // 
+            // sociosToolStripMenuItem
+            // 
+            this.sociosToolStripMenuItem.Name = "sociosToolStripMenuItem";
+            this.sociosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.sociosToolStripMenuItem.Text = "Socios";
             // 
             // PPrin
             // 

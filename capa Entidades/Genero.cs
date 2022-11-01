@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace capa_Entidades
 {
-    class Genero
+    public class Genero
     {
-        protected int Id_Genero;
-        protected string Generito;
+        private int Id_Genero;
+        private string Generito;
 
         #region Propiedades
         public int P_IDGenero

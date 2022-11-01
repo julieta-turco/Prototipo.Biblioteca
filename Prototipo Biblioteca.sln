@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31727.386
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "capa presentacion", "capa presentacion.csproj", "{F5158B0F-B8CF-4AE7-B33B-0987BC8888E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "capaPresentacion", "capaPresentacion.csproj", "{F5158B0F-B8CF-4AE7-B33B-0987BC8888E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "capa Entidades", "capa Entidades\capa Entidades.csproj", "{B819B19F-4E4B-45EB-AFF4-D80223BAFDE3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "capaEntidades", "capa Entidades\capaEntidades.csproj", "{B819B19F-4E4B-45EB-AFF4-D80223BAFDE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "capa Datos", "capa Datos\capa Datos.csproj", "{15AF1A1C-4B90-4778-9123-8A06F42DB6FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "capaDatos", "capa Datos\capaDatos.csproj", "{15AF1A1C-4B90-4778-9123-8A06F42DB6FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

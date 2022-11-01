@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace capa_Entidades
 {
-    class Autor
+    public class Autor
     {
         #region atributos
-        protected int Id_Autor;
-        protected string Nombre;
-        protected string Apellido;
+        private int Id_Autor;
+        private string Nombre;
+        private string Apellido;
         #endregion
 
         #region Propiedades

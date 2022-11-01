@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using capaDatos;
 
 namespace capaPresentacion
 {
@@ -36,9 +35,9 @@ namespace capaPresentacion
             frmLib.Show();
         }
 
-        private void conexionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        //private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        //{
 
-        }
+        //}
     }
 }
