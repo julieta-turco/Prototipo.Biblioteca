@@ -40,6 +40,21 @@ namespace capa_Entidades
             set { Disponible = value; }
             get { return Disponible; }
         }
+        public int P_IDAutor
+        {
+            set { ID_Autor = value; }
+            get { return ID_Autor; }
+        }
+        public int P_IDEditorial
+        {
+            set { ID_Editorial = value; }
+            get { return ID_Editorial; }
+        }
+        public int P_IDGenero
+        {
+            set { ID_Genero = value; }
+            get { return ID_Genero; }
+        }
         #endregion
         #region Constructor
         public Libros()
