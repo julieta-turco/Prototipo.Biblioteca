@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using capaDatos;
+using CapaNegocio;
 
 namespace capaPresentacion
 {
@@ -17,18 +18,7 @@ namespace capaPresentacion
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void generoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            formGenero frm = new formGenero();
-            frm.Show();
-        }
-
+       
         private void librosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -38,6 +28,10 @@ namespace capaPresentacion
 
         private void conexionToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            NegocioLibros PruebaConexion = new NegocioLibros();
+            if (PruebaConexion.EstablecerConexion())
+                MessageBox.Show("Conexion Exitosa");
+            else MessageBox.Show("Fallo la Conexion");
         }
     }
 }

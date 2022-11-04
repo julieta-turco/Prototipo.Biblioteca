@@ -29,9 +29,9 @@ namespace capaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.Modificar = new System.Windows.Forms.Button();
-            this.Agregar = new System.Windows.Forms.Button();
             this.Eliminar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -40,7 +40,7 @@ namespace capaPresentacion
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Uighur", 33F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Uighur", 33F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(2, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -50,36 +50,31 @@ namespace capaPresentacion
             // 
             // Modificar
             // 
-            this.Modificar.Location = new System.Drawing.Point(336, 583);
+            this.Modificar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Modificar.Location = new System.Drawing.Point(214, 561);
             this.Modificar.Margin = new System.Windows.Forms.Padding(4);
             this.Modificar.Name = "Modificar";
             this.Modificar.Size = new System.Drawing.Size(147, 60);
             this.Modificar.TabIndex = 2;
             this.Modificar.Text = "Modificar";
-            this.Modificar.UseVisualStyleBackColor = true;
-            // 
-            // Agregar
-            // 
-            this.Agregar.Location = new System.Drawing.Point(54, 583);
-            this.Agregar.Margin = new System.Windows.Forms.Padding(4);
-            this.Agregar.Name = "Agregar";
-            this.Agregar.Size = new System.Drawing.Size(147, 60);
-            this.Agregar.TabIndex = 3;
-            this.Agregar.Text = "Agregar";
-            this.Agregar.UseVisualStyleBackColor = true;
+            this.Modificar.UseVisualStyleBackColor = false;
             // 
             // Eliminar
             // 
-            this.Eliminar.Location = new System.Drawing.Point(628, 583);
+            this.Eliminar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Eliminar.Location = new System.Drawing.Point(450, 561);
             this.Eliminar.Margin = new System.Windows.Forms.Padding(4);
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.Size = new System.Drawing.Size(147, 60);
             this.Eliminar.TabIndex = 4;
             this.Eliminar.Text = "Eliminar";
-            this.Eliminar.UseVisualStyleBackColor = true;
+            this.Eliminar.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Beige;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.SeaShell;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(17, 107);
             this.dataGridView1.Name = "dataGridView1";
@@ -93,12 +88,11 @@ namespace capaPresentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(852, 654);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Eliminar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Agregar);
             this.Controls.Add(this.Modificar);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -113,7 +107,6 @@ namespace capaPresentacion
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Modificar;
-        private System.Windows.Forms.Button Agregar;
         private System.Windows.Forms.Button Eliminar;
         private System.Windows.Forms.DataGridView dataGridView1;
     }

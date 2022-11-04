@@ -44,6 +44,9 @@ namespace capaPresentacion
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.MasAutor = new System.Windows.Forms.Button();
+            this.MasEditorial = new System.Windows.Forms.Button();
+            this.MasGenero = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -80,30 +83,32 @@ namespace capaPresentacion
             // 
             // btnAGREGAR
             // 
+            this.btnAGREGAR.BackColor = System.Drawing.Color.White;
             this.btnAGREGAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAGREGAR.Location = new System.Drawing.Point(515, 398);
             this.btnAGREGAR.Name = "btnAGREGAR";
             this.btnAGREGAR.Size = new System.Drawing.Size(100, 100);
             this.btnAGREGAR.TabIndex = 10;
             this.btnAGREGAR.Text = "Agregar";
-            this.btnAGREGAR.UseVisualStyleBackColor = true;
+            this.btnAGREGAR.UseVisualStyleBackColor = false;
             this.btnAGREGAR.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnSALIR
             // 
+            this.btnSALIR.BackColor = System.Drawing.Color.White;
             this.btnSALIR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSALIR.Location = new System.Drawing.Point(662, 398);
             this.btnSALIR.Name = "btnSALIR";
             this.btnSALIR.Size = new System.Drawing.Size(100, 100);
             this.btnSALIR.TabIndex = 11;
             this.btnSALIR.Text = "Salir";
-            this.btnSALIR.UseVisualStyleBackColor = true;
+            this.btnSALIR.UseVisualStyleBackColor = false;
             this.btnSALIR.Click += new System.EventHandler(this.btnSALIR_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Uighur", 33F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Uighur", 33F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(39, 30);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(241, 86);
@@ -180,11 +185,45 @@ namespace capaPresentacion
             this.checkBox1.Text = "Si";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // MasAutor
+            // 
+            this.MasAutor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.MasAutor.Location = new System.Drawing.Point(515, 236);
+            this.MasAutor.Name = "MasAutor";
+            this.MasAutor.Size = new System.Drawing.Size(30, 30);
+            this.MasAutor.TabIndex = 25;
+            this.MasAutor.Text = "+";
+            this.MasAutor.UseVisualStyleBackColor = false;
+            // 
+            // MasEditorial
+            // 
+            this.MasEditorial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.MasEditorial.Location = new System.Drawing.Point(515, 289);
+            this.MasEditorial.Name = "MasEditorial";
+            this.MasEditorial.Size = new System.Drawing.Size(30, 30);
+            this.MasEditorial.TabIndex = 26;
+            this.MasEditorial.Text = "+";
+            this.MasEditorial.UseVisualStyleBackColor = false;
+            // 
+            // MasGenero
+            // 
+            this.MasGenero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.MasGenero.Location = new System.Drawing.Point(515, 339);
+            this.MasGenero.Name = "MasGenero";
+            this.MasGenero.Size = new System.Drawing.Size(30, 30);
+            this.MasGenero.TabIndex = 27;
+            this.MasGenero.Text = "+";
+            this.MasGenero.UseVisualStyleBackColor = false;
+            // 
             // formLibros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(828, 510);
+            this.Controls.Add(this.MasGenero);
+            this.Controls.Add(this.MasEditorial);
+            this.Controls.Add(this.MasAutor);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
@@ -224,5 +263,8 @@ namespace capaPresentacion
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button MasAutor;
+        private System.Windows.Forms.Button MasEditorial;
+        private System.Windows.Forms.Button MasGenero;
     }
 }

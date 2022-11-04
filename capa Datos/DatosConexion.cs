@@ -17,18 +17,22 @@ namespace capaDatos
         {
             conexion = new OleDbConnection(cadenaConexion);
         }
-        public void Abrirconexion()
+        public bool Abrirconexion()
         {
+            bool Exitoso = false;
             try
             {
                 if (conexion.State == ConnectionState.Broken || conexion.State ==
                 ConnectionState.Closed)
                     conexion.Open();
+                Exitoso = true;
             }
             catch (Exception e)
             {
                 throw new Exception("Error al tratar de abrir la conexión", e);
+                
             }
+            return Exitoso;
         }
         public void Cerrarconexion()
         {

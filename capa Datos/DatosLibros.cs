@@ -9,30 +9,30 @@ using capa_Entidades;
 
 namespace capaDatos
 {
-    public class DatosLibros: DatosConexion
+    public class DatosLibros : DatosConexion
     {
-        public int AbmLibros (string accion, Libros objlibros)
+        public int AbmLibros(string accion, Libros objlibros)
         {
             int resultado = -1;
             string orden = string.Empty;
             if (accion == "Alta")
                 orden = "insert into Libros values " +
-               "("+ objlibros.P_IDLibro +",'" + objlibros.P_Titulo + "'," +
-               " "+objlibros.P_Ubicacion+", "+objlibros.P_Disponible+", " +
-               ""+ objlibros.P_IDAutor+ ", " + objlibros.P_IDEditorial + "," +
+               "(" + objlibros.P_IDLibro + ",'" + objlibros.P_Titulo + "'," +
+               " " + objlibros.P_Ubicacion + ", " + objlibros.P_Disponible + ", " +
+               "" + objlibros.P_IDAutor + ", " + objlibros.P_IDEditorial + "," +
                "" + objlibros.P_IDGenero + "); ";
-           
+
             if (accion == "Modificar")
                 orden = "update Libros set Título='" + objlibros.P_Titulo + "'where Id_Libro = " + objlibros.P_IDLibro + "; ";
-                orden = "update Libros set Ubicacion='" + objlibros.P_Ubicacion + "'where Id_Libro = " + objlibros.P_IDLibro + "; ";
-                orden = "update Libros set Disponible='" + objlibros.P_Disponible + "'where Id_Libro = " + objlibros.P_IDLibro + "; ";
-                orden = "update Libros set Id_Autor='" + objlibros.P_IDAutor + "'where Id_Libro = " + objlibros.P_IDLibro + "; ";
-                orden = "update Libros set Id_Editorial='" + objlibros.P_IDEditorial + "'where Id_Libro = " + objlibros.P_IDLibro + "; ";
-                orden = "update Libros set Id_Genero='" + objlibros.P_IDGenero + "'where Id_Libro = " + objlibros.P_IDLibro + "; ";
+            orden = "update Libros set Ubicacion='" + objlibros.P_Ubicacion + "'where Id_Libro = " + objlibros.P_IDLibro + "; ";
+            orden = "update Libros set Disponible='" + objlibros.P_Disponible + "'where Id_Libro = " + objlibros.P_IDLibro + "; ";
+            orden = "update Libros set Id_Autor='" + objlibros.P_IDAutor + "'where Id_Libro = " + objlibros.P_IDLibro + "; ";
+            orden = "update Libros set Id_Editorial='" + objlibros.P_IDEditorial + "'where Id_Libro = " + objlibros.P_IDLibro + "; ";
+            orden = "update Libros set Id_Genero='" + objlibros.P_IDGenero + "'where Id_Libro = " + objlibros.P_IDLibro + "; ";
 
-            if(accion == "Baja")
-                orden = "delete Libros get Id_Libros'"+ 
-                    objlibros.P_IDLibro + ",'" + objlibros.P_Titulo + "'," +objlibros.P_Ubicacion + ", " + objlibros.P_Disponible + ", "+ objlibros.P_IDAutor + ", " + objlibros.P_IDEditorial + "," +
+            if (accion == "Baja")
+                orden = "delete Libros get Id_Libros'" +
+                    objlibros.P_IDLibro + ",'" + objlibros.P_Titulo + "'," + objlibros.P_Ubicacion + ", " + objlibros.P_Disponible + ", " + objlibros.P_IDAutor + ", " + objlibros.P_IDEditorial + "," +
                "" + objlibros.P_IDGenero + "); ";
 
             OleDbCommand cmd = new OleDbCommand(orden, conexion);
@@ -51,7 +51,35 @@ namespace capaDatos
                 cmd.Dispose();
             }
             return resultado;
+        }
 
+        public DataSet listadoLibros(string cual)
+        {
+            string orden = string.Empty;
+            if (cual != "Todos")
+                orden = "select * from Libros where Id_Libro = " + int.Parse(cual) + ";";
+            else
+                orden = "select * from Libros;";
+            OleDbCommand cmd = new OleDbCommand(orden, conexion);
+            DataSet ds = new DataSet();
+            OleDbDataAdapter da = new OleDbDataAdapter();
+            try
+            {
+                Abrirconexion();
+                cmd.ExecuteNonQuery();
+                da.SelectCommand = cmd;
+                da.Fill(ds);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al listar productos", e);
+            }
+            finally
+            {
+                Cerrarconexion();
+                cmd.Dispose();
+            }
+            return ds;
 
 
         }
