@@ -23,12 +23,13 @@ namespace capaDatos
                "" + objlibros.P_IDGenero + "); ";
 
             if (accion == "Modificar")
-                orden = "update Libros set Título='" + objlibros.P_Titulo + "'where Id_Libro = " + objlibros.P_IDLibro + "; ";
-            orden = "update Libros set Ubicacion='" + objlibros.P_Ubicacion + "'where Id_Libro = " + objlibros.P_IDLibro + "; ";
-            orden = "update Libros set Disponible='" + objlibros.P_Disponible + "'where Id_Libro = " + objlibros.P_IDLibro + "; ";
-            orden = "update Libros set Id_Autor='" + objlibros.P_IDAutor + "'where Id_Libro = " + objlibros.P_IDLibro + "; ";
-            orden = "update Libros set Id_Editorial='" + objlibros.P_IDEditorial + "'where Id_Libro = " + objlibros.P_IDLibro + "; ";
-            orden = "update Libros set Id_Genero='" + objlibros.P_IDGenero + "'where Id_Libro = " + objlibros.P_IDLibro + "; ";
+            orden = "update Libros set Título='" + objlibros.P_Titulo + "'";
+            orden += ", Ubicacion =" + objlibros.P_Ubicacion;
+            orden += ", Disponible='" + objlibros.P_Disponible;
+            orden += ", Id_Autor='" + objlibros.P_IDAutor;
+            orden += ", Id_Editorial='" + objlibros.P_IDEditorial;
+            orden += ", Id_Genero='" + objlibros.P_IDGenero;
+            orden += "'where Id_Libro = " + objlibros.P_IDLibro + "; ";
 
             if (accion == "Baja")
                 orden = "delete Libros get Id_Libros'" +

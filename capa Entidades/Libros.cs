@@ -9,7 +9,7 @@ namespace capa_Entidades
    public class Libros
     {
         #region atributos
-        protected
+        private
             int Id_Libro;
         string Titulo;
         string Ubicacion;

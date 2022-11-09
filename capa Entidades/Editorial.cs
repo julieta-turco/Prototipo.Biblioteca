@@ -9,8 +9,8 @@ namespace capa_Entidades
     class Editorial
     {
         private
-    int Id_Editorial;
-        string Nombre;
+        private int Id_Editorial;
+        private string Nombre;
         string Direccion;
         long Numero;
         string Mail;
