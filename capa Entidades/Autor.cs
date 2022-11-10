@@ -17,7 +17,6 @@ namespace capa_Entidades
         #region Propiedades
         public int P_IDAutor
         {
-            set { Id_Autor = value; }
             get { return Id_Autor; }
         }
         public string P_Nombre
@@ -42,6 +41,7 @@ namespace capa_Entidades
             Nombre = Nom;
             Apellido = Ape;
         }
+
         #endregion
     }
 }

@@ -24,5 +24,17 @@ namespace capaPresentacion
         {
 
         }
+
+        private void Agregar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            formLibros frmLib = new formLibros();
+            frmLib.Show();
+        }
+
+        private void Eliminar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

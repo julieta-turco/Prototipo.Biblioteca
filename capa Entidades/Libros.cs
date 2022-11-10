@@ -9,20 +9,21 @@ namespace capa_Entidades
    public class Libros
     {
         #region atributos
-        private
-            int Id_Libro;
-        string Titulo;
-        string Ubicacion;
-        bool Disponible;
-        int ID_Autor;
-        int ID_Editorial;
-        int ID_Genero;
+        
+        private int Id_Libro;
+        private string Titulo;
+        private string Ubicacion;
+        private bool Disponible;
+        private int ID_Autor;
+        private int ID_Editorial;
+        private int ID_Genero;
+        private DateTime Fecha;
+
         #endregion
 
         #region propiedades
         public int P_IDLibro
         {
-            set { Id_Libro = value; }
             get { return Id_Libro; }
         }
         public string P_Titulo
@@ -42,30 +43,53 @@ namespace capa_Entidades
         }
         public int P_IDAutor
         {
-            set { ID_Autor = value; }
             get { return ID_Autor; }
         }
         public int P_IDEditorial
         {
-            set { ID_Editorial = value; }
-            get { return ID_Editorial; }
+             get { return ID_Editorial; }
         }
         public int P_IDGenero
         {
-            set { ID_Genero = value; }
             get { return ID_Genero; }
+        }
+        public DateTime P_Fecha
+        {
+            set { Fecha = value; }
+            get { return Fecha; }
         }
         #endregion
         #region Constructor
         public Libros()
         {
         }
-        public Libros(int IdL, string Tit, string Ubi, bool Disp )
+        public Libros(int IdL, string Tit, string Ubi, bool Disp, int IdA, int IdE, int IdG, DateTime fech)
         {
             Id_Libro = IdL;
             Titulo = Tit;
             Ubicacion = Ubi;
             Disponible = Disp;
+            ID_Autor = IdA;
+            ID_Editorial = IdE;
+            ID_Genero = IdG;
+            Fecha = fech;
+        }
+        public Libros(string Tit, string Ubi, bool Disp, int IdA, int IdE, int IdG, DateTime fech)
+        {
+            Titulo = Tit;
+            Ubicacion = Ubi;
+            Disponible = Disp;
+            ID_Autor = IdA;
+            ID_Editorial = IdE;
+            ID_Genero = IdG;
+            Fecha = fech;
+        }
+        public Libros(string Tit, string Ubi, bool Disp, DateTime fech)
+        {
+            Titulo = Tit;
+            Ubicacion = Ubi;
+            Disponible = Disp;
+            Fecha = fech;
         }
         #endregion
 

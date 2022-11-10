@@ -14,7 +14,6 @@ namespace capa_Entidades
         #region Propiedades
         public int P_IDGenero
         {
-            set { Id_Genero = value; }
             get { return Id_Genero; }
         }
         public string P_Generito

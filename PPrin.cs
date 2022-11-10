@@ -33,5 +33,10 @@ namespace capaPresentacion
                 MessageBox.Show("Conexion Exitosa");
             else MessageBox.Show("Fallo la Conexion");
         }
+
+        private void PPrin_Load(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

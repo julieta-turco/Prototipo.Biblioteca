@@ -8,17 +8,16 @@ namespace capa_Entidades
 {
     class Editorial
     {
-        private
+        
         private int Id_Editorial;
         private string Nombre;
-        string Direccion;
-        long Numero;
-        string Mail;
+        private string Direccion;
+        private long Numero;
+        private string Mail;
 
         #region propiedades
         public int P_IdEditorial
         {
-            set { Id_Editorial = value; }
             get { return Id_Editorial; }
         }
         public string P_Nombre
@@ -54,6 +53,10 @@ namespace capa_Entidades
             Direccion = Dire;
             Numero = Num;
             Mail = Email;
+        }
+        public Editorial(string nome)
+        {
+            Nombre = nome;
         }
         #endregion
     }

@@ -31,25 +31,15 @@ namespace capaPresentacion
         {
             System.Windows.Forms.MenuStrip menuStrip1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PPrin));
-            this.label1 = new System.Windows.Forms.Label();
             this.conexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.librosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sociosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             menuStrip1 = new System.Windows.Forms.MenuStrip();
             menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Uighur", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(68, 118);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(590, 62);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "BIBLIOTECA POPULAR ALBERDI";
             // 
             // menuStrip1
             // 
@@ -93,14 +83,14 @@ namespace capaPresentacion
             // librosToolStripMenuItem
             // 
             this.librosToolStripMenuItem.Name = "librosToolStripMenuItem";
-            this.librosToolStripMenuItem.Size = new System.Drawing.Size(270, 50);
+            this.librosToolStripMenuItem.Size = new System.Drawing.Size(202, 50);
             this.librosToolStripMenuItem.Text = "Libros";
             this.librosToolStripMenuItem.Click += new System.EventHandler(this.librosToolStripMenuItem_Click);
             // 
             // sociosToolStripMenuItem
             // 
             this.sociosToolStripMenuItem.Name = "sociosToolStripMenuItem";
-            this.sociosToolStripMenuItem.Size = new System.Drawing.Size(270, 50);
+            this.sociosToolStripMenuItem.Size = new System.Drawing.Size(202, 50);
             this.sociosToolStripMenuItem.Text = "Socios";
             // 
             // prestamosToolStripMenuItem
@@ -108,6 +98,16 @@ namespace capaPresentacion
             this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
             this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(153, 45);
             this.prestamosToolStripMenuItem.Text = "Prestamos";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Uighur", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(68, 118);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(590, 62);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "BIBLIOTECA POPULAR ALBERDI";
             // 
             // PPrin
             // 
@@ -121,6 +121,7 @@ namespace capaPresentacion
             this.MaximizeBox = false;
             this.Name = "PPrin";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.PPrin_Load);
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             this.ResumeLayout(false);
