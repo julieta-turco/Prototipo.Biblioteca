@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using capaDatos;
 using CapaNegocio;
+using Entidades;
 
 namespace capaPresentacion
 {
@@ -18,23 +18,45 @@ namespace capaPresentacion
         {
             InitializeComponent();
         }
-       
+
         private void librosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
-            formLibros frmLib = new formLibros();
-            frmLib.Show();
+            formLibros frmLibs = new formLibros();
+            frmLibs.Show();
         }
 
         private void conexionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NegocioLibros PruebaConexion = new NegocioLibros();
-            if (PruebaConexion.EstablecerConexion())
-                MessageBox.Show("Conexion Exitosa");
-            else MessageBox.Show("Fallo la Conexion");
+            Negocio negocio = new Negocio();
+            if (negocio.probarConexion())
+            {
+                MessageBox.Show("Conexion exitosa");
+            }
+            else
+            {
+                MessageBox.Show("No se pudo conectar a la base de datos");
+            }
         }
 
-        private void PPrin_Load(object sender, EventArgs e)
+        private void editorialToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            formEditorial frm = new formEditorial();
+            frm.Show();
+        }
+
+        private void generoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            formGenero frm = new formGenero();
+            frm.Show();
+        }
+
+        private void autorToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            formAutor frm = new formAutor();
+            frm.Show();
+        }
+
+        private void salirToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

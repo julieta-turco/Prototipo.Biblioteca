@@ -29,39 +29,26 @@ namespace capaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Btn_IngresarGen = new System.Windows.Forms.Button();
+            this.Btn_SalirGen = new System.Windows.Forms.Button();
+            this.TxtB_NomGenero = new System.Windows.Forms.TextBox();
+            this.DGV_Genero = new System.Windows.Forms.DataGridView();
+            this.Btn_SelecGen = new System.Windows.Forms.Button();
+            this.Btn_ModificarGen = new System.Windows.Forms.Button();
+            this.Btn_EliminarGen = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Genero)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 121);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID genero";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 190);
+            this.label2.Location = new System.Drawing.Point(37, 145);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 20);
+            this.label2.Size = new System.Drawing.Size(123, 20);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Genero";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(184, 121);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 26);
-            this.textBox1.TabIndex = 3;
+            this.label2.Text = "Nombre Genero";
             // 
             // label3
             // 
@@ -73,58 +60,104 @@ namespace capaPresentacion
             this.label3.TabIndex = 6;
             this.label3.Text = "Nuevo Genero Literario";
             // 
-            // button1
+            // Btn_IngresarGen
             // 
-            this.button1.Location = new System.Drawing.Point(124, 266);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 30);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Ingresar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Btn_IngresarGen.Location = new System.Drawing.Point(63, 201);
+            this.Btn_IngresarGen.Name = "Btn_IngresarGen";
+            this.Btn_IngresarGen.Size = new System.Drawing.Size(90, 30);
+            this.Btn_IngresarGen.TabIndex = 7;
+            this.Btn_IngresarGen.Text = "Ingresar";
+            this.Btn_IngresarGen.UseVisualStyleBackColor = true;
+            this.Btn_IngresarGen.Click += new System.EventHandler(this.Btn_IngresarGen_Click);
             // 
-            // button2
+            // Btn_SalirGen
             // 
-            this.button2.Location = new System.Drawing.Point(294, 266);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 30);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Salir";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Btn_SalirGen.Location = new System.Drawing.Point(236, 201);
+            this.Btn_SalirGen.Name = "Btn_SalirGen";
+            this.Btn_SalirGen.Size = new System.Drawing.Size(90, 30);
+            this.Btn_SalirGen.TabIndex = 8;
+            this.Btn_SalirGen.Text = "Salir";
+            this.Btn_SalirGen.UseVisualStyleBackColor = true;
+            this.Btn_SalirGen.Click += new System.EventHandler(this.Btn_SalirGen_Click);
             // 
-            // textBox2
+            // TxtB_NomGenero
             // 
-            this.textBox2.Location = new System.Drawing.Point(184, 183);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 26);
-            this.textBox2.TabIndex = 9;
+            this.TxtB_NomGenero.Location = new System.Drawing.Point(177, 142);
+            this.TxtB_NomGenero.Name = "TxtB_NomGenero";
+            this.TxtB_NomGenero.Size = new System.Drawing.Size(254, 26);
+            this.TxtB_NomGenero.TabIndex = 9;
+            // 
+            // DGV_Genero
+            // 
+            this.DGV_Genero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_Genero.Location = new System.Drawing.Point(520, 81);
+            this.DGV_Genero.Name = "DGV_Genero";
+            this.DGV_Genero.RowHeadersWidth = 62;
+            this.DGV_Genero.RowTemplate.Height = 28;
+            this.DGV_Genero.Size = new System.Drawing.Size(500, 150);
+            this.DGV_Genero.TabIndex = 10;
+            // 
+            // Btn_SelecGen
+            // 
+            this.Btn_SelecGen.Location = new System.Drawing.Point(548, 252);
+            this.Btn_SelecGen.Name = "Btn_SelecGen";
+            this.Btn_SelecGen.Size = new System.Drawing.Size(100, 50);
+            this.Btn_SelecGen.TabIndex = 11;
+            this.Btn_SelecGen.Text = "Seleccionar";
+            this.Btn_SelecGen.UseVisualStyleBackColor = true;
+            this.Btn_SelecGen.Click += new System.EventHandler(this.Btn_SelecGen_Click);
+            // 
+            // Btn_ModificarGen
+            // 
+            this.Btn_ModificarGen.Location = new System.Drawing.Point(746, 252);
+            this.Btn_ModificarGen.Name = "Btn_ModificarGen";
+            this.Btn_ModificarGen.Size = new System.Drawing.Size(100, 50);
+            this.Btn_ModificarGen.TabIndex = 12;
+            this.Btn_ModificarGen.Text = "Modificar";
+            this.Btn_ModificarGen.UseVisualStyleBackColor = true;
+            this.Btn_ModificarGen.Click += new System.EventHandler(this.Btn_ModificarGen_Click);
+            // 
+            // Btn_EliminarGen
+            // 
+            this.Btn_EliminarGen.Location = new System.Drawing.Point(920, 252);
+            this.Btn_EliminarGen.Name = "Btn_EliminarGen";
+            this.Btn_EliminarGen.Size = new System.Drawing.Size(100, 50);
+            this.Btn_EliminarGen.TabIndex = 13;
+            this.Btn_EliminarGen.Text = "Eliminar";
+            this.Btn_EliminarGen.UseVisualStyleBackColor = true;
+            this.Btn_EliminarGen.Click += new System.EventHandler(this.Btn_EliminarGen_Click);
             // 
             // formGenero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 314);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1063, 314);
+            this.Controls.Add(this.Btn_EliminarGen);
+            this.Controls.Add(this.Btn_ModificarGen);
+            this.Controls.Add(this.Btn_SelecGen);
+            this.Controls.Add(this.DGV_Genero);
+            this.Controls.Add(this.TxtB_NomGenero);
+            this.Controls.Add(this.Btn_SalirGen);
+            this.Controls.Add(this.Btn_IngresarGen);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "formGenero";
             this.Text = "genero";
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Genero)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button Btn_IngresarGen;
+        private System.Windows.Forms.Button Btn_SalirGen;
+        private System.Windows.Forms.TextBox TxtB_NomGenero;
+        private System.Windows.Forms.DataGridView DGV_Genero;
+        private System.Windows.Forms.Button Btn_SelecGen;
+        private System.Windows.Forms.Button Btn_ModificarGen;
+        private System.Windows.Forms.Button Btn_EliminarGen;
     }
 }

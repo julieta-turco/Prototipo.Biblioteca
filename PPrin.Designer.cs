@@ -36,35 +36,40 @@ namespace capaPresentacion
             this.librosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sociosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.generoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editorialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             menuStrip1 = new System.Windows.Forms.MenuStrip();
             menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
+            menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            menuStrip1.Font = new System.Drawing.Font("Yellowtail", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            menuStrip1.Font = new System.Drawing.Font("Yellowtail", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 9);
             menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.conexionToolStripMenuItem,
             this.entidadesToolStripMenuItem,
-            this.prestamosToolStripMenuItem});
+            this.prestamosToolStripMenuItem,
+            this.salirToolStripMenuItem});
             menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            menuStrip1.Location = new System.Drawing.Point(180, 39);
+            menuStrip1.Location = new System.Drawing.Point(9, 9);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            menuStrip1.Size = new System.Drawing.Size(429, 49);
+            menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            menuStrip1.Size = new System.Drawing.Size(643, 43);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
             // conexionToolStripMenuItem
             // 
             this.conexionToolStripMenuItem.Name = "conexionToolStripMenuItem";
-            this.conexionToolStripMenuItem.Size = new System.Drawing.Size(130, 45);
+            this.conexionToolStripMenuItem.Size = new System.Drawing.Size(114, 39);
             this.conexionToolStripMenuItem.Text = "Conexion";
             this.conexionToolStripMenuItem.Click += new System.EventHandler(this.conexionToolStripMenuItem_Click);
             // 
@@ -72,32 +77,43 @@ namespace capaPresentacion
             // 
             this.entidadesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.librosToolStripMenuItem,
-            this.sociosToolStripMenuItem});
+            this.sociosToolStripMenuItem,
+            this.generoToolStripMenuItem,
+            this.editorialToolStripMenuItem,
+            this.autorToolStripMenuItem});
             this.entidadesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.entidadesToolStripMenuItem.Name = "entidadesToolStripMenuItem";
-            this.entidadesToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.entidadesToolStripMenuItem.Size = new System.Drawing.Size(140, 45);
+            this.entidadesToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.entidadesToolStripMenuItem.Size = new System.Drawing.Size(125, 39);
             this.entidadesToolStripMenuItem.Text = "Entidades";
             this.entidadesToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // librosToolStripMenuItem
             // 
             this.librosToolStripMenuItem.Name = "librosToolStripMenuItem";
-            this.librosToolStripMenuItem.Size = new System.Drawing.Size(202, 50);
+            this.librosToolStripMenuItem.Size = new System.Drawing.Size(270, 44);
             this.librosToolStripMenuItem.Text = "Libros";
             this.librosToolStripMenuItem.Click += new System.EventHandler(this.librosToolStripMenuItem_Click);
             // 
             // sociosToolStripMenuItem
             // 
             this.sociosToolStripMenuItem.Name = "sociosToolStripMenuItem";
-            this.sociosToolStripMenuItem.Size = new System.Drawing.Size(202, 50);
+            this.sociosToolStripMenuItem.Size = new System.Drawing.Size(270, 44);
             this.sociosToolStripMenuItem.Text = "Socios";
             // 
             // prestamosToolStripMenuItem
             // 
+            this.prestamosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
-            this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(153, 45);
+            this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(134, 39);
             this.prestamosToolStripMenuItem.Text = "Prestamos";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(84, 39);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click_1);
             // 
             // label1
             // 
@@ -108,6 +124,27 @@ namespace capaPresentacion
             this.label1.Size = new System.Drawing.Size(590, 62);
             this.label1.TabIndex = 0;
             this.label1.Text = "BIBLIOTECA POPULAR ALBERDI";
+            // 
+            // generoToolStripMenuItem
+            // 
+            this.generoToolStripMenuItem.Name = "generoToolStripMenuItem";
+            this.generoToolStripMenuItem.Size = new System.Drawing.Size(270, 44);
+            this.generoToolStripMenuItem.Text = "Genero";
+            this.generoToolStripMenuItem.Click += new System.EventHandler(this.generoToolStripMenuItem_Click_1);
+            // 
+            // editorialToolStripMenuItem
+            // 
+            this.editorialToolStripMenuItem.Name = "editorialToolStripMenuItem";
+            this.editorialToolStripMenuItem.Size = new System.Drawing.Size(270, 44);
+            this.editorialToolStripMenuItem.Text = "Editorial";
+            this.editorialToolStripMenuItem.Click += new System.EventHandler(this.editorialToolStripMenuItem_Click_1);
+            // 
+            // autorToolStripMenuItem
+            // 
+            this.autorToolStripMenuItem.Name = "autorToolStripMenuItem";
+            this.autorToolStripMenuItem.Size = new System.Drawing.Size(270, 44);
+            this.autorToolStripMenuItem.Text = "Autor";
+            this.autorToolStripMenuItem.Click += new System.EventHandler(this.autorToolStripMenuItem_Click_1);
             // 
             // PPrin
             // 
@@ -121,7 +158,6 @@ namespace capaPresentacion
             this.MaximizeBox = false;
             this.Name = "PPrin";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.PPrin_Load);
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -137,6 +173,10 @@ namespace capaPresentacion
         private System.Windows.Forms.ToolStripMenuItem prestamosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem librosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sociosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editorialToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem autorToolStripMenuItem;
     }
 }
 

@@ -9,26 +9,71 @@ using capaDatos;
 
 namespace CapaNegocio
 {
-    public class NegocioLibros
+    public class NegLibros
     {
-        public bool EstablecerConexion()
-        {
-            DatosConexion pruebaconexion = new DatosConexion();
-            bool Exitoso = pruebaconexion.Abrirconexion();
-            pruebaconexion.Cerrarconexion();
-
-            return Exitoso;
-        }
-        DatosLibros objetoDatosLibros = new DatosLibros();
-
+        #region Libros
+        AdministrarTablas DatosObjLibros = new AdministrarTablas();
         public int AbmLibros(string accion, Libros objlibros)
         {
-            return objetoDatosLibros.AbmLibros(accion, objlibros);
+            return DatosObjLibros.AbmLibros(accion, objlibros);
         }
+
         public DataSet listadoLibros(string cual)
         {
-            return objetoDatosLibros.listadoLibros(cual);
+            return DatosObjLibros.listadoLibros(cual);
         }
+        #endregion
+        #region Autor
+        AdministrarTablas DatosObjAutor = new AdministrarTablas();
+
+        public int AbmAutor(string accion, Autor objautor)
+        {
+            return DatosObjAutor.AbmAutor(accion, objautor);
+        }
+        public DataSet listadoAutores(string cual)
+        {
+            return DatosObjAutor.listadoAutores(cual);
+        }
+        public List<Autor> ObtenerAutor()
+        {
+
+            return DatosObjAutor.ObtenerAutor();
+        }
+        #endregion
+        #region Editorial
+        AdministrarTablas DatosObjEditorial = new AdministrarTablas();
+        public int AbmEditorial(string accion, Editorial objeditorial)
+        {
+            return DatosObjEditorial.AbmEditorial(accion, objeditorial);
+        }
+
+        public DataSet listadoEditoriales(string cual)
+        {
+            return DatosObjEditorial.listadoEditoriales(cual);
+        }
+        public List<Editorial> ObtenerEditorial()
+        {
+            return DatosObjEditorial.ObtenerEditorial();
+        }
+        #endregion
+        #region Genero
+        AdministrarTablas DatosObjGenero = new AdministrarTablas();
+
+        public int AbmGenero(string accion, Genero objgenero)
+        {
+            return DatosObjGenero.AbmGenero(accion, objgenero);
+        }
+
+        public DataSet listadoGeneros(string cual)
+        {
+            return DatosObjGenero.listadoGeneros(cual);
+        }
+        public List<Genero> ObtenerGenero()
+        {
+
+            return DatosObjGenero.ObtenerGenero();
+        }
+        #endregion
+
     }
-   
 }

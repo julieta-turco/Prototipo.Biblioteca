@@ -31,13 +31,14 @@ namespace Entidades
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.TxtBNomApeAut = new System.Windows.Forms.TextBox();
+            this.Btn_AgregarAut = new System.Windows.Forms.Button();
+            this.Btn_SalirAut = new System.Windows.Forms.Button();
+            this.DGVAut = new System.Windows.Forms.DataGridView();
+            this.BtnSelecAut = new System.Windows.Forms.Button();
+            this.Btn_ModificarAut = new System.Windows.Forms.Button();
+            this.Btn_EliminarAut = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVAut)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -53,85 +54,96 @@ namespace Entidades
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(51, 163);
+            this.label2.Location = new System.Drawing.Point(32, 224);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 20);
+            this.label2.Size = new System.Drawing.Size(136, 20);
             this.label2.TabIndex = 1;
-            this.label2.Text = "ID Autor";
+            this.label2.Text = "Nombre y Apellido";
             // 
-            // label3
+            // TxtBNomApeAut
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(51, 237);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Nombre";
+            this.TxtBNomApeAut.Location = new System.Drawing.Point(201, 218);
+            this.TxtBNomApeAut.Name = "TxtBNomApeAut";
+            this.TxtBNomApeAut.Size = new System.Drawing.Size(173, 26);
+            this.TxtBNomApeAut.TabIndex = 4;
             // 
-            // label4
+            // Btn_AgregarAut
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(51, 313);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Apellido";
+            this.Btn_AgregarAut.Location = new System.Drawing.Point(93, 307);
+            this.Btn_AgregarAut.Name = "Btn_AgregarAut";
+            this.Btn_AgregarAut.Size = new System.Drawing.Size(75, 40);
+            this.Btn_AgregarAut.TabIndex = 7;
+            this.Btn_AgregarAut.Text = "Agregar";
+            this.Btn_AgregarAut.UseVisualStyleBackColor = true;
+            this.Btn_AgregarAut.Click += new System.EventHandler(this.Btn_AgregarAut_Click);
             // 
-            // textBox1
+            // Btn_SalirAut
             // 
-            this.textBox1.Location = new System.Drawing.Point(151, 156);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(173, 26);
-            this.textBox1.TabIndex = 4;
+            this.Btn_SalirAut.Location = new System.Drawing.Point(232, 307);
+            this.Btn_SalirAut.Name = "Btn_SalirAut";
+            this.Btn_SalirAut.Size = new System.Drawing.Size(75, 40);
+            this.Btn_SalirAut.TabIndex = 8;
+            this.Btn_SalirAut.Text = "Salir";
+            this.Btn_SalirAut.UseVisualStyleBackColor = true;
+            this.Btn_SalirAut.Click += new System.EventHandler(this.Btn_SalirAut_Click);
             // 
-            // textBox2
+            // DGVAut
             // 
-            this.textBox2.Location = new System.Drawing.Point(151, 237);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(173, 26);
-            this.textBox2.TabIndex = 5;
+            this.DGVAut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVAut.Location = new System.Drawing.Point(448, 91);
+            this.DGVAut.Name = "DGVAut";
+            this.DGVAut.RowHeadersWidth = 62;
+            this.DGVAut.RowTemplate.Height = 28;
+            this.DGVAut.Size = new System.Drawing.Size(593, 273);
+            this.DGVAut.TabIndex = 9;
             // 
-            // textBox3
+            // BtnSelecAut
             // 
-            this.textBox3.Location = new System.Drawing.Point(151, 307);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(173, 26);
-            this.textBox3.TabIndex = 6;
+            this.BtnSelecAut.Location = new System.Drawing.Point(495, 387);
+            this.BtnSelecAut.Name = "BtnSelecAut";
+            this.BtnSelecAut.Size = new System.Drawing.Size(100, 50);
+            this.BtnSelecAut.TabIndex = 10;
+            this.BtnSelecAut.Text = "Seleccionar";
+            this.BtnSelecAut.UseVisualStyleBackColor = true;
+            this.BtnSelecAut.Click += new System.EventHandler(this.BtnSelecAut_Click);
             // 
-            // button1
+            // Btn_ModificarAut
             // 
-            this.button1.Location = new System.Drawing.Point(151, 369);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 40);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Btn_ModificarAut.Location = new System.Drawing.Point(695, 387);
+            this.Btn_ModificarAut.Name = "Btn_ModificarAut";
+            this.Btn_ModificarAut.Size = new System.Drawing.Size(100, 50);
+            this.Btn_ModificarAut.TabIndex = 11;
+            this.Btn_ModificarAut.Text = "Modificar";
+            this.Btn_ModificarAut.UseVisualStyleBackColor = true;
+            this.Btn_ModificarAut.Click += new System.EventHandler(this.Btn_ModificarAut_Click);
             // 
-            // button2
+            // Btn_EliminarAut
             // 
-            this.button2.Location = new System.Drawing.Point(249, 369);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 40);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Salir";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Btn_EliminarAut.Location = new System.Drawing.Point(899, 387);
+            this.Btn_EliminarAut.Name = "Btn_EliminarAut";
+            this.Btn_EliminarAut.Size = new System.Drawing.Size(100, 50);
+            this.Btn_EliminarAut.TabIndex = 12;
+            this.Btn_EliminarAut.Text = "Eliminar";
+            this.Btn_EliminarAut.UseVisualStyleBackColor = true;
+            this.Btn_EliminarAut.Click += new System.EventHandler(this.Btn_EliminarAut_Click);
             // 
             // formAutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(1053, 450);
+            this.Controls.Add(this.Btn_EliminarAut);
+            this.Controls.Add(this.Btn_ModificarAut);
+            this.Controls.Add(this.BtnSelecAut);
+            this.Controls.Add(this.DGVAut);
+            this.Controls.Add(this.Btn_SalirAut);
+            this.Controls.Add(this.Btn_AgregarAut);
+            this.Controls.Add(this.TxtBNomApeAut);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "formAutor";
             this.Text = "Autor";
+            ((System.ComponentModel.ISupportInitialize)(this.DGVAut)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,12 +153,12 @@ namespace Entidades
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox TxtBNomApeAut;
+        private System.Windows.Forms.Button Btn_AgregarAut;
+        private System.Windows.Forms.Button Btn_SalirAut;
+        private System.Windows.Forms.DataGridView DGVAut;
+        private System.Windows.Forms.Button BtnSelecAut;
+        private System.Windows.Forms.Button Btn_ModificarAut;
+        private System.Windows.Forms.Button Btn_EliminarAut;
     }
 }

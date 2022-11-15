@@ -30,18 +30,23 @@ namespace capaPresentacion
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.IDEdit = new System.Windows.Forms.Label();
+            this.NomEdit = new System.Windows.Forms.Label();
+            this.DireEdit = new System.Windows.Forms.Label();
+            this.NumEdit = new System.Windows.Forms.Label();
+            this.MailEdit = new System.Windows.Forms.Label();
+            this.TxtBIdEdit = new System.Windows.Forms.TextBox();
+            this.TxtBNumEdit = new System.Windows.Forms.TextBox();
+            this.TxtBDireEdit = new System.Windows.Forms.TextBox();
+            this.TxtBMailEdit = new System.Windows.Forms.TextBox();
+            this.TxtBNombreEdit = new System.Windows.Forms.TextBox();
+            this.Btn_AgregarEdit = new System.Windows.Forms.Button();
+            this.Btn_SalirEdit = new System.Windows.Forms.Button();
+            this.DGVEdit = new System.Windows.Forms.DataGridView();
+            this.BtnSelecEdit = new System.Windows.Forms.Button();
+            this.BtnEliminarEdit = new System.Windows.Forms.Button();
+            this.BtnModificarEdit = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVEdit)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -54,124 +59,171 @@ namespace capaPresentacion
             this.label1.TabIndex = 0;
             this.label1.Text = "Nuevo Ingreso Editorial";
             // 
-            // label2
+            // IDEdit
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(85, 162);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "ID Editorial";
+            this.IDEdit.AutoSize = true;
+            this.IDEdit.Location = new System.Drawing.Point(85, 162);
+            this.IDEdit.Name = "IDEdit";
+            this.IDEdit.Size = new System.Drawing.Size(87, 20);
+            this.IDEdit.TabIndex = 1;
+            this.IDEdit.Text = "ID Editorial";
             // 
-            // label3
+            // NomEdit
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(85, 214);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Nombre";
+            this.NomEdit.AutoSize = true;
+            this.NomEdit.Location = new System.Drawing.Point(85, 214);
+            this.NomEdit.Name = "NomEdit";
+            this.NomEdit.Size = new System.Drawing.Size(65, 20);
+            this.NomEdit.TabIndex = 2;
+            this.NomEdit.Text = "Nombre";
             // 
-            // label4
+            // DireEdit
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(85, 267);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Direccion";
+            this.DireEdit.AutoSize = true;
+            this.DireEdit.Location = new System.Drawing.Point(85, 267);
+            this.DireEdit.Name = "DireEdit";
+            this.DireEdit.Size = new System.Drawing.Size(75, 20);
+            this.DireEdit.TabIndex = 3;
+            this.DireEdit.Text = "Direccion";
             // 
-            // label5
+            // NumEdit
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(85, 319);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 20);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Numero";
+            this.NumEdit.AutoSize = true;
+            this.NumEdit.Location = new System.Drawing.Point(85, 319);
+            this.NumEdit.Name = "NumEdit";
+            this.NumEdit.Size = new System.Drawing.Size(65, 20);
+            this.NumEdit.TabIndex = 4;
+            this.NumEdit.Text = "Numero";
             // 
-            // label6
+            // MailEdit
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(85, 371);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 20);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Mail";
+            this.MailEdit.AutoSize = true;
+            this.MailEdit.Location = new System.Drawing.Point(85, 371);
+            this.MailEdit.Name = "MailEdit";
+            this.MailEdit.Size = new System.Drawing.Size(37, 20);
+            this.MailEdit.TabIndex = 5;
+            this.MailEdit.Text = "Mail";
             // 
-            // textBox1
+            // TxtBIdEdit
             // 
-            this.textBox1.Location = new System.Drawing.Point(230, 156);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(219, 26);
-            this.textBox1.TabIndex = 6;
+            this.TxtBIdEdit.Location = new System.Drawing.Point(230, 156);
+            this.TxtBIdEdit.Name = "TxtBIdEdit";
+            this.TxtBIdEdit.Size = new System.Drawing.Size(219, 26);
+            this.TxtBIdEdit.TabIndex = 6;
             // 
-            // textBox2
+            // TxtBNumEdit
             // 
-            this.textBox2.Location = new System.Drawing.Point(230, 313);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(219, 26);
-            this.textBox2.TabIndex = 7;
+            this.TxtBNumEdit.Location = new System.Drawing.Point(230, 313);
+            this.TxtBNumEdit.Name = "TxtBNumEdit";
+            this.TxtBNumEdit.Size = new System.Drawing.Size(219, 26);
+            this.TxtBNumEdit.TabIndex = 7;
             // 
-            // textBox3
+            // TxtBDireEdit
             // 
-            this.textBox3.Location = new System.Drawing.Point(230, 261);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(219, 26);
-            this.textBox3.TabIndex = 8;
+            this.TxtBDireEdit.Location = new System.Drawing.Point(230, 261);
+            this.TxtBDireEdit.Name = "TxtBDireEdit";
+            this.TxtBDireEdit.Size = new System.Drawing.Size(219, 26);
+            this.TxtBDireEdit.TabIndex = 8;
             // 
-            // textBox4
+            // TxtBMailEdit
             // 
-            this.textBox4.Location = new System.Drawing.Point(230, 365);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(219, 26);
-            this.textBox4.TabIndex = 9;
+            this.TxtBMailEdit.Location = new System.Drawing.Point(230, 365);
+            this.TxtBMailEdit.Name = "TxtBMailEdit";
+            this.TxtBMailEdit.Size = new System.Drawing.Size(219, 26);
+            this.TxtBMailEdit.TabIndex = 9;
             // 
-            // textBox5
+            // TxtBNombreEdit
             // 
-            this.textBox5.Location = new System.Drawing.Point(230, 208);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(219, 26);
-            this.textBox5.TabIndex = 10;
+            this.TxtBNombreEdit.Location = new System.Drawing.Point(230, 208);
+            this.TxtBNombreEdit.Name = "TxtBNombreEdit";
+            this.TxtBNombreEdit.Size = new System.Drawing.Size(219, 26);
+            this.TxtBNombreEdit.TabIndex = 10;
             // 
-            // button1
+            // Btn_AgregarEdit
             // 
-            this.button1.Location = new System.Drawing.Point(497, 351);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 40);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Btn_AgregarEdit.Location = new System.Drawing.Point(144, 433);
+            this.Btn_AgregarEdit.Name = "Btn_AgregarEdit";
+            this.Btn_AgregarEdit.Size = new System.Drawing.Size(100, 50);
+            this.Btn_AgregarEdit.TabIndex = 11;
+            this.Btn_AgregarEdit.Text = "Agregar";
+            this.Btn_AgregarEdit.UseVisualStyleBackColor = true;
+            this.Btn_AgregarEdit.Click += new System.EventHandler(this.Btn_AgregarEdit_Click);
             // 
-            // button2
+            // Btn_SalirEdit
             // 
-            this.button2.Location = new System.Drawing.Point(628, 351);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 40);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Salir";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Btn_SalirEdit.Location = new System.Drawing.Point(349, 433);
+            this.Btn_SalirEdit.Name = "Btn_SalirEdit";
+            this.Btn_SalirEdit.Size = new System.Drawing.Size(100, 50);
+            this.Btn_SalirEdit.TabIndex = 12;
+            this.Btn_SalirEdit.Text = "Salir";
+            this.Btn_SalirEdit.UseVisualStyleBackColor = true;
+            this.Btn_SalirEdit.Click += new System.EventHandler(this.Btn_SalirEdit_Click);
+            // 
+            // DGVEdit
+            // 
+            this.DGVEdit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVEdit.Location = new System.Drawing.Point(583, 127);
+            this.DGVEdit.Name = "DGVEdit";
+            this.DGVEdit.RowHeadersWidth = 62;
+            this.DGVEdit.RowTemplate.Height = 28;
+            this.DGVEdit.Size = new System.Drawing.Size(600, 300);
+            this.DGVEdit.TabIndex = 13;
+            // 
+            // BtnSelecEdit
+            // 
+            this.BtnSelecEdit.Location = new System.Drawing.Point(636, 433);
+            this.BtnSelecEdit.Name = "BtnSelecEdit";
+            this.BtnSelecEdit.Size = new System.Drawing.Size(100, 50);
+            this.BtnSelecEdit.TabIndex = 14;
+            this.BtnSelecEdit.Text = "Seleccionar";
+            this.BtnSelecEdit.UseVisualStyleBackColor = true;
+            this.BtnSelecEdit.Click += new System.EventHandler(this.BtnSelecEdit_Click);
+            // 
+            // BtnEliminarEdit
+            // 
+            this.BtnEliminarEdit.Location = new System.Drawing.Point(1048, 433);
+            this.BtnEliminarEdit.Name = "BtnEliminarEdit";
+            this.BtnEliminarEdit.Size = new System.Drawing.Size(100, 50);
+            this.BtnEliminarEdit.TabIndex = 15;
+            this.BtnEliminarEdit.Text = "Eliminar";
+            this.BtnEliminarEdit.UseVisualStyleBackColor = true;
+            this.BtnEliminarEdit.Click += new System.EventHandler(this.BtnEliminarEdit_Click);
+            // 
+            // BtnModificarEdit
+            // 
+            this.BtnModificarEdit.Location = new System.Drawing.Point(851, 433);
+            this.BtnModificarEdit.Name = "BtnModificarEdit";
+            this.BtnModificarEdit.Size = new System.Drawing.Size(100, 50);
+            this.BtnModificarEdit.TabIndex = 16;
+            this.BtnModificarEdit.Text = "Modificar";
+            this.BtnModificarEdit.UseVisualStyleBackColor = true;
+            this.BtnModificarEdit.Click += new System.EventHandler(this.BtnModificarEdit_Click);
             // 
             // formEditorial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(1206, 513);
+            this.Controls.Add(this.BtnModificarEdit);
+            this.Controls.Add(this.BtnEliminarEdit);
+            this.Controls.Add(this.BtnSelecEdit);
+            this.Controls.Add(this.DGVEdit);
+            this.Controls.Add(this.Btn_SalirEdit);
+            this.Controls.Add(this.Btn_AgregarEdit);
+            this.Controls.Add(this.TxtBNombreEdit);
+            this.Controls.Add(this.TxtBMailEdit);
+            this.Controls.Add(this.TxtBDireEdit);
+            this.Controls.Add(this.TxtBNumEdit);
+            this.Controls.Add(this.TxtBIdEdit);
+            this.Controls.Add(this.MailEdit);
+            this.Controls.Add(this.NumEdit);
+            this.Controls.Add(this.DireEdit);
+            this.Controls.Add(this.NomEdit);
+            this.Controls.Add(this.IDEdit);
             this.Controls.Add(this.label1);
             this.Name = "formEditorial";
             this.Text = "Editorial";
+            ((System.ComponentModel.ISupportInitialize)(this.DGVEdit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,17 +232,21 @@ namespace capaPresentacion
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label IDEdit;
+        private System.Windows.Forms.Label NomEdit;
+        private System.Windows.Forms.Label DireEdit;
+        private System.Windows.Forms.Label NumEdit;
+        private System.Windows.Forms.Label MailEdit;
+        private System.Windows.Forms.TextBox TxtBIdEdit;
+        private System.Windows.Forms.TextBox TxtBNumEdit;
+        private System.Windows.Forms.TextBox TxtBDireEdit;
+        private System.Windows.Forms.TextBox TxtBMailEdit;
+        private System.Windows.Forms.TextBox TxtBNombreEdit;
+        private System.Windows.Forms.Button Btn_AgregarEdit;
+        private System.Windows.Forms.Button Btn_SalirEdit;
+        private System.Windows.Forms.DataGridView DGVEdit;
+        private System.Windows.Forms.Button BtnSelecEdit;
+        private System.Windows.Forms.Button BtnEliminarEdit;
+        private System.Windows.Forms.Button BtnModificarEdit;
     }
 }

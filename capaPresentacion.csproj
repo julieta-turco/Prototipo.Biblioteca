@@ -52,12 +52,6 @@
     <Compile Include="formAutor.Designer.cs">
       <DependentUpon>formAutor.cs</DependentUpon>
     </Compile>
-    <Compile Include="formListaLibros.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formListaLibros.Designer.cs">
-      <DependentUpon>formListaLibros.cs</DependentUpon>
-    </Compile>
     <Compile Include="formEditorial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,9 +86,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formGenero.resx">
       <DependentUpon>formGenero.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formListaLibros.resx">
-      <DependentUpon>formListaLibros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formLibros.resx">
       <DependentUpon>formLibros.cs</DependentUpon>

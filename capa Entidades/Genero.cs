@@ -6,20 +6,21 @@ using System.Threading.Tasks;
 
 namespace capa_Entidades
 {
-    class Genero
+    public class Genero
     {
         private int Id_Genero;
-        private string Generito;
+        private string NombreGenero;
 
         #region Propiedades
         public int P_IDGenero
         {
+            set { Id_Genero = value; }
             get { return Id_Genero; }
         }
-        public string P_Generito
+        public string P_NombreGenero
         {
-            set { Generito = value; }
-            get { return Generito; }
+            set { NombreGenero = value; }
+            get { return NombreGenero; }
         }
         #endregion
 
@@ -27,10 +28,14 @@ namespace capa_Entidades
         public Genero()
         {
         }
-        public Genero(int IdG, string Gen, string Ape)
+        public Genero(int IdG, string Gen)
         {
             Id_Genero = IdG;
-            Generito = Gen;
+            NombreGenero = Gen;
+        }
+        public Genero(string Gen)
+        {
+            NombreGenero = Gen;
         }
         #endregion
     }

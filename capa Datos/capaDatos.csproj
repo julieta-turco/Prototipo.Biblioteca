@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatosConexion.cs" />
-    <Compile Include="DatosLibros.cs" />
+    <Compile Include="AdministrarTablas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,28 +6,23 @@ using System.Threading.Tasks;
 
 namespace capa_Entidades
 {
-    class Autor
+    public class Autor
     {
         #region atributos
         private int Id_Autor;
-        private string Nombre;
-        private string Apellido;
+        private string NombreApellido;
         #endregion
 
         #region Propiedades
         public int P_IDAutor
         {
+            set { Id_Autor = value; }
             get { return Id_Autor; }
         }
-        public string P_Nombre
+        public string P_NombreApellido
         {
-            set { Nombre = value; }
-            get { return Nombre; }
-        }
-        public string P_Apellido
-        {
-            set { Apellido = value; }
-            get { return Apellido; }
+            set { NombreApellido = value; }
+            get { return NombreApellido; }
         }
         #endregion
 
@@ -35,11 +30,14 @@ namespace capa_Entidades
         public Autor()
         {
         }
-        public Autor(int IdA, string Nom, string Ape)
+        public Autor(int IdA, string NomApe)
         {
             Id_Autor = IdA;
-            Nombre = Nom;
-            Apellido = Ape;
+            NombreApellido = NomApe;
+        }
+        public Autor(string NomApe)
+        {
+            NombreApellido = NomApe;
         }
 
         #endregion

@@ -6,18 +6,20 @@ using System.Threading.Tasks;
 
 namespace capa_Entidades
 {
-    class Editorial
+    public class Editorial
     {
-        
+        #region Atributos
         private int Id_Editorial;
         private string Nombre;
         private string Direccion;
         private long Numero;
         private string Mail;
+        #endregion
 
         #region propiedades
         public int P_IdEditorial
         {
+            set { Id_Editorial = value; }
             get { return Id_Editorial; }
         }
         public string P_Nombre
@@ -46,9 +48,16 @@ namespace capa_Entidades
         public Editorial()
         {
         }
-        public Editorial(int IdE, string Nome, string Dire, int Num, string Email)
+        public Editorial(int IdE, string Nome, string Dire, long Num, string Email)
         {
             Id_Editorial = IdE;
+            Nombre = Nome;
+            Direccion = Dire;
+            Numero = Num;
+            Mail = Email;
+        }
+        public Editorial(string Nome, string Dire, long Num, string Email)
+        {
             Nombre = Nome;
             Direccion = Dire;
             Numero = Num;
