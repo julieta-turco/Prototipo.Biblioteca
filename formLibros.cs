@@ -41,8 +41,8 @@ namespace capaPresentacion
             DGV_ListaLibros.Columns.Add("6", "Disponible");
 
 
-            DGV_ListaLibros.Columns[0].Width = 200;
-            DGV_ListaLibros.Columns[1].Width = 100;
+            DGV_ListaLibros.Columns[0].Width = 80;
+            DGV_ListaLibros.Columns[1].Width = 120;
             DGV_ListaLibros.Columns[2].Width = 100;
             DGV_ListaLibros.Columns[3].Width = 80;
             DGV_ListaLibros.Columns[4].Width = 80;
@@ -70,14 +70,17 @@ namespace capaPresentacion
             cb_NomApeAut.DataSource = DatosObjLibros.ObtenerAutor(); // se define el origen con la Lista
             cb_NomApeAut.DisplayMember = "P_NombreApellido";
             cb_NomApeAut.ValueMember = "P_IDAutor";
+            cb_NomApeAut.SelectedItem = null;
 
             cb_EDITORIAL.DataSource = DatosObjLibros.ObtenerEditorial(); // se define el origen con la Lista
             cb_EDITORIAL.DisplayMember = "P_Nombre";
             cb_EDITORIAL.ValueMember = "P_IdEditorial";
+            cb_EDITORIAL.SelectedItem = null;
 
             cb_GENERO.DataSource = DatosObjLibros.ObtenerGenero(); // se define el origen con la Lista
             cb_GENERO.DisplayMember = "P_NombreGenero";
             cb_GENERO.ValueMember = "P_IDGenero";
+            cb_GENERO.SelectedItem = null;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -111,11 +114,7 @@ namespace capaPresentacion
         {
             this.Close();
         }
-               
-
-        
-       
-       
+ 
         private void button1_Click(object sender, EventArgs e)
         {
             formAutor frmAut = new formAutor();
@@ -161,6 +160,7 @@ namespace capaPresentacion
             nResultado = DatosObjLibros.AbmLibros("Modificar", LibrosExistente);
             if (nResultado != -1)
             {
+                MessageBox.Show("Modificado con Exito");
                 LlenarDgv();
             }
             else
@@ -171,6 +171,7 @@ namespace capaPresentacion
 
         private void Eliminar_Lib_Click_1(object sender, EventArgs e)
         {
+            MessageBox.Show("Esta Seguro que desea eliminarlo?");
             LibrosExistente = new Libros(int.Parse(DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[0].Value.ToString()),textBox_TITULO.Text, textBox_UBICACION.Text,  Convert.ToInt32(cb_EDITORIAL.SelectedValue), Convert.ToInt32(cb_NomApeAut.SelectedValue), Convert.ToInt32(cb_GENERO.SelectedValue), checkBox1.Checked);
 
             Autor AutorExistente;
