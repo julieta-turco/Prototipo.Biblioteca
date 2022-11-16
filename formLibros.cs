@@ -32,12 +32,13 @@ namespace capaPresentacion
 
         public void CrearDgv()
         {
-            DGV_ListaLibros.Columns.Add("0", "Titulo");
-            DGV_ListaLibros.Columns.Add("1", "Ubicacion");
-            DGV_ListaLibros.Columns.Add("2", "Id_Autor");
+            DGV_ListaLibros.Columns.Add("0", "Id_Libro");
+            DGV_ListaLibros.Columns.Add("1", "Titulo");
+            DGV_ListaLibros.Columns.Add("2", "Ubicacion");
             DGV_ListaLibros.Columns.Add("3", "Id_Editorial");
-            DGV_ListaLibros.Columns.Add("4", "Id_Genero");
-            DGV_ListaLibros.Columns.Add("5", "Disponible");
+            DGV_ListaLibros.Columns.Add("4", "Id_Autor");
+            DGV_ListaLibros.Columns.Add("5", "Id_Genero");
+            DGV_ListaLibros.Columns.Add("6", "Disponible");
 
 
             DGV_ListaLibros.Columns[0].Width = 200;
@@ -46,6 +47,7 @@ namespace capaPresentacion
             DGV_ListaLibros.Columns[3].Width = 80;
             DGV_ListaLibros.Columns[4].Width = 80;
             DGV_ListaLibros.Columns[5].Width = 50;
+            DGV_ListaLibros.Columns[6].Width = 50;
         }
         private void LlenarDgv()
         {
@@ -56,7 +58,7 @@ namespace capaPresentacion
             {
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    DGV_ListaLibros.Rows.Add(dr[0].ToString(), dr[1], dr[2].ToString());
+                    DGV_ListaLibros.Rows.Add(dr[0].ToString(), dr[1], dr[2], dr[3].ToString(), dr [4].ToString(), dr[5].ToString(), dr[6]);
                 }
             }
             else
@@ -66,7 +68,7 @@ namespace capaPresentacion
         { //llena un combo desde una lista con descripcion y código
 
             cb_NomApeAut.DataSource = DatosObjLibros.ObtenerAutor(); // se define el origen con la Lista
-            cb_NomApeAut.DisplayMember = "p_NombreApellido";
+            cb_NomApeAut.DisplayMember = "P_NombreApellido";
             cb_NomApeAut.ValueMember = "P_IDAutor";
 
             cb_EDITORIAL.DataSource = DatosObjLibros.ObtenerEditorial(); // se define el origen con la Lista
@@ -81,17 +83,17 @@ namespace capaPresentacion
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Libros NuevoLibro;
-            NuevoLibro = new Libros(textBox_TITULO.Text, textBox_UBICACION.Text, Convert.ToInt32(cb_NomApeAut.SelectedValue), Convert.ToInt32(cb_EDITORIAL.SelectedValue), Convert.ToInt32(cb_GENERO.SelectedValue), checkBox1.Checked);
-
-            Autor NuevoAutor;
-            NuevoAutor = new Autor (cb_NomApeAut.Text);
-
+            NuevoLibro = new Libros(textBox_TITULO.Text, textBox_UBICACION.Text,  Convert.ToInt32(cb_EDITORIAL.SelectedValue), Convert.ToInt32(cb_NomApeAut.SelectedValue), Convert.ToInt32(cb_GENERO.SelectedValue), checkBox1.Checked);
+            /*            
             Editorial NuevaEditorial;
             NuevaEditorial = new Editorial(cb_EDITORIAL.Text);
 
+            Autor NuevoAutor;
+            NuevoAutor = new Autor(cb_NomApeAut.Text);
+
             Genero NuevoGenero;
             NuevoGenero = new Genero(cb_GENERO.Text);
-
+            */
             int nGrabados = -1;
             nGrabados = DatosObjLibros.AbmLibros("Alta", NuevoLibro);
 
@@ -101,61 +103,59 @@ namespace capaPresentacion
             }
             else
             {
-                MessageBox.Show("Los libros se guardaron correctamente");
+                LlenarDgv();
             }
-
-
         }
 
         private void btnSALIR_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+               
 
-        private void boton_ALTA_AUTOR_Click(object sender, EventArgs e)
+        
+       
+       
+        private void button1_Click(object sender, EventArgs e)
         {
-            //this.Close();
-            //llamar al form autor
             formAutor frmAut = new formAutor();
             frmAut.Show();
-
         }
 
-        private void boton_ALTA_EDITORIAL_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             formEditorial frmEdit = new formEditorial();
             frmEdit.Show();
-            //cb_EDITORIAL.DataSource = DatosObjLibros.ObtenerEditorial(); // se define el origen con la Lista
-            //cb_EDITORIAL.DisplayMember = "P_Nombre";
-            //cb_EDITORIAL.ValueMember = "P_IdEditorial";
         }
 
-        private void boton_ALTA_GENERO_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            //this.Close();
             formGenero frmGen = new formGenero();
             frmGen.Show();
         }
 
-        private void Eliminar_Lib_Click(object sender, EventArgs e)
+        private void Seleccionar_Lib_Click_1(object sender, EventArgs e)
         {
-            LibrosExistente = new Libros(int.Parse(DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[0].Value.ToString()), textBox_TITULO.Text, textBox_UBICACION.Text, cb_NomApeAut.SelectedIndex, cb_EDITORIAL.SelectedIndex, cb_GENERO.SelectedIndex, checkBox1.Checked);
-
-            int nResultado = -1;
-            nResultado = DatosObjLibros.AbmLibros("Baja", LibrosExistente);
-            if (nResultado != -1)
-            {
-                LlenarDgv();
-            }
-            else
-            {
-                MessageBox.Show("se produjo un error al eliminar el Libro");
-            }
+            textBox_TITULO.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[1].Value.ToString();
+            textBox_UBICACION.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[2].Value.ToString();
+            cb_EDITORIAL.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[3].Value.ToString();
+            cb_NomApeAut.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[4].Value.ToString();            
+            cb_GENERO.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[5].Value.ToString();
+            checkBox1.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[6].Value.ToString();
         }
 
-        private void Modificar_Lib_Click(object sender, EventArgs e)
+        private void Modificar_Lib_Click_1(object sender, EventArgs e)
         {
-            LibrosExistente = new Libros(int.Parse(DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[0].Value.ToString()), textBox_TITULO.Text, textBox_UBICACION.Text, cb_NomApeAut.SelectedIndex, cb_EDITORIAL.SelectedIndex, cb_GENERO.SelectedIndex, checkBox1.Checked);
+            LibrosExistente = new Libros(int.Parse(DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[0].Value.ToString()), textBox_TITULO.Text, textBox_UBICACION.Text, Convert.ToInt32(cb_EDITORIAL.SelectedValue), Convert.ToInt32(cb_NomApeAut.SelectedValue), Convert.ToInt32(cb_GENERO.SelectedValue), checkBox1.Checked);
+
+            Editorial editorialExistente;
+            editorialExistente = new Editorial(cb_EDITORIAL.Text); 
+
+            Autor AutorExistente;
+            AutorExistente = new Autor(cb_NomApeAut.Text);            
+
+            Genero generoExistente;
+            generoExistente = new Genero(cb_GENERO.Text);
 
             int nResultado = -1;
             nResultado = DatosObjLibros.AbmLibros("Modificar", LibrosExistente);
@@ -169,14 +169,35 @@ namespace capaPresentacion
             }
         }
 
-        private void Seleccionar_Lib_Click(object sender, EventArgs e)
+        private void Eliminar_Lib_Click_1(object sender, EventArgs e)
         {
-            textBox_TITULO.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[0].Value.ToString();
-            textBox_UBICACION.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[1].Value.ToString();
-            cb_NomApeAut.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[2].Value.ToString();
-            cb_EDITORIAL.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[3].Value.ToString();
-            cb_GENERO.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[4].Value.ToString();
-            checkBox1.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[5].Value.ToString();
+            LibrosExistente = new Libros(int.Parse(DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[0].Value.ToString()),textBox_TITULO.Text, textBox_UBICACION.Text,  Convert.ToInt32(cb_EDITORIAL.SelectedValue), Convert.ToInt32(cb_NomApeAut.SelectedValue), Convert.ToInt32(cb_GENERO.SelectedValue), checkBox1.Checked);
+
+            Autor AutorExistente;
+            AutorExistente = new Autor(cb_NomApeAut.Text);
+
+            Editorial editorialExistente;
+            editorialExistente = new Editorial(cb_EDITORIAL.Text);
+
+            Genero generoExistente;
+            generoExistente = new Genero(cb_GENERO.Text);
+
+
+            int nResultado = -1;
+            nResultado = DatosObjLibros.AbmLibros("Baja", LibrosExistente);
+            if (nResultado != -1)
+            {
+                LlenarDgv();
+            }
+            else
+            {
+                MessageBox.Show("se produjo un error al eliminar el Libro");
+            }
+        }
+
+        private void cb_NomApeAut_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -57,23 +57,23 @@ namespace capa_Entidades
         public Libros()
         {
         }
-        public Libros(int IdL, string Tit, string Ubi, int IdA, int IdE, int IdG, bool Disp)
+        public Libros(int IdL, string Tit, string Ubi, int IdE, int IdA, int IdG, bool Disp)
         {
             Id_Libro = IdL;
             Titulo = Tit;
             Ubicacion = Ubi;
-            ID_Autor = IdA;
             ID_Editorial = IdE;
+            ID_Autor = IdA;
             ID_Genero = IdG;
             Disponible = Disp;
 
         }
-        public Libros(string Tit, string Ubi, int IdA, int IdE, int IdG, bool Disp)
+        public Libros(string Tit, string Ubi, int IdE, int IdA, int IdG, bool Disp)
         {
             Titulo = Tit;
             Ubicacion = Ubi;
-            ID_Autor = IdA;
             ID_Editorial = IdE;
+            ID_Autor = IdA;
             ID_Genero = IdG;
             Disponible = Disp;
 
@@ -84,6 +84,10 @@ namespace capa_Entidades
             Ubicacion = Ubi;
             Disponible = Disp;
 
+        }
+        public Libros(int IdL)
+        {
+            Id_Libro = IdL;
         }
         #endregion
 

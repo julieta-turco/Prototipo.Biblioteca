@@ -12,7 +12,6 @@ namespace capaDatos
     {
         protected OleDbConnection conexion;
         protected string cadenaConexion = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\juli_\OneDrive\Escritorio\source\repos\Base de Datos - Biblioteca.accdb";
-        
         public DatosConexion()
         {
             conexion = new OleDbConnection(cadenaConexion);

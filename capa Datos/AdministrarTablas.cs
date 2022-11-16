@@ -24,19 +24,19 @@ namespace capaDatos
             }
             if (accion == "Modificar")
             {
-                orden = "update Libros set Título='" + objlibros.P_Titulo + "'";
-                orden += ", Ubicacion =" + objlibros.P_Ubicacion;
-                orden += ", Disponible='" + objlibros.P_Disponible;
-                orden += ", Id_Autor='" + objlibros.P_IdAutor;
-                orden += ", Id_Editorial='" + objlibros.P_IdEditorial;
-                orden += ", Id_Genero='" + objlibros.P_IdGenero;
-                orden += "'where Id_Libro = " + objlibros.P_IDLibro + "; ";
+                orden = "update libros set Titulo =" + "'" + objlibros.P_Titulo + "'";
+                orden += ", Ubicacion = '" + objlibros.P_Ubicacion + "'";
+                orden += ", Id_Editorial =" + objlibros.P_IdEditorial;
+                orden += ", Id_Autor = " + objlibros.P_IdAutor;
+                orden += ", Id_Genero= " + objlibros.P_IdGenero;
+                orden += ", Disponible = " + objlibros.P_Disponible;
+                orden += " where Id_Libro =" + objlibros.P_IDLibro + ";";
             }
             if (accion == "Baja")
             {
-                orden = "delete From Libros where Id_Libros = " + objlibros.P_IDLibro + ";";
+                orden = " delete From Libros where Id_Libro = " + objlibros.P_IDLibro + ";";
             }
-
+            
             OleDbCommand cmd = new OleDbCommand(orden, conexion);
             try
             {
@@ -229,12 +229,12 @@ namespace capaDatos
             string orden = string.Empty; // para guardar la consulta sql
             if (accion == "Alta")
 
-                orden = "insert into Autor (NombreApellido) values " + " ('" + objautor.P_NombreApellido + "'" + "," + "'" + "');";
+                orden = "insert into Autor (NombreApellido) values " + " ('" + objautor.P_NombreApellido + "');";
 
 
             if (accion == "Modificar")
             {
-                orden = "update Autor set Nombre='" + objautor.P_NombreApellido + "'";
+                orden = "update Autor set NombreApellido='" + objautor.P_NombreApellido + "'";
                 orden += " where Id_Autor= " + objautor.P_IDAutor + ";";
             }
 

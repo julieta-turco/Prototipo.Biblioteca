@@ -35,7 +35,7 @@ namespace Entidades
             {
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    DGVAut.Rows.Add(dr[0].ToString(), dr[1], dr[2]);
+                    DGVAut.Rows.Add(dr[0].ToString(), dr[1]);
                 }
             }
             else
