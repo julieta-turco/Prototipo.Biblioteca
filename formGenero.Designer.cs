@@ -35,7 +35,6 @@ namespace capaPresentacion
             this.Btn_SalirGen = new System.Windows.Forms.Button();
             this.TxtB_NomGenero = new System.Windows.Forms.TextBox();
             this.DGV_Genero = new System.Windows.Forms.DataGridView();
-            this.Btn_SelecGen = new System.Windows.Forms.Button();
             this.Btn_ModificarGen = new System.Windows.Forms.Button();
             this.Btn_EliminarGen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Genero)).BeginInit();
@@ -62,9 +61,9 @@ namespace capaPresentacion
             // 
             // Btn_IngresarGen
             // 
-            this.Btn_IngresarGen.Location = new System.Drawing.Point(63, 201);
+            this.Btn_IngresarGen.Location = new System.Drawing.Point(73, 201);
             this.Btn_IngresarGen.Name = "Btn_IngresarGen";
-            this.Btn_IngresarGen.Size = new System.Drawing.Size(90, 30);
+            this.Btn_IngresarGen.Size = new System.Drawing.Size(90, 40);
             this.Btn_IngresarGen.TabIndex = 7;
             this.Btn_IngresarGen.Text = "Ingresar";
             this.Btn_IngresarGen.UseVisualStyleBackColor = true;
@@ -72,9 +71,9 @@ namespace capaPresentacion
             // 
             // Btn_SalirGen
             // 
-            this.Btn_SalirGen.Location = new System.Drawing.Point(236, 201);
+            this.Btn_SalirGen.Location = new System.Drawing.Point(231, 201);
             this.Btn_SalirGen.Name = "Btn_SalirGen";
-            this.Btn_SalirGen.Size = new System.Drawing.Size(90, 30);
+            this.Btn_SalirGen.Size = new System.Drawing.Size(90, 40);
             this.Btn_SalirGen.TabIndex = 8;
             this.Btn_SalirGen.Text = "Salir";
             this.Btn_SalirGen.UseVisualStyleBackColor = true;
@@ -90,26 +89,17 @@ namespace capaPresentacion
             // DGV_Genero
             // 
             this.DGV_Genero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_Genero.Location = new System.Drawing.Point(520, 81);
+            this.DGV_Genero.Location = new System.Drawing.Point(480, 55);
             this.DGV_Genero.Name = "DGV_Genero";
             this.DGV_Genero.RowHeadersWidth = 62;
             this.DGV_Genero.RowTemplate.Height = 28;
             this.DGV_Genero.Size = new System.Drawing.Size(500, 150);
             this.DGV_Genero.TabIndex = 10;
-            // 
-            // Btn_SelecGen
-            // 
-            this.Btn_SelecGen.Location = new System.Drawing.Point(548, 252);
-            this.Btn_SelecGen.Name = "Btn_SelecGen";
-            this.Btn_SelecGen.Size = new System.Drawing.Size(100, 50);
-            this.Btn_SelecGen.TabIndex = 11;
-            this.Btn_SelecGen.Text = "Seleccionar";
-            this.Btn_SelecGen.UseVisualStyleBackColor = true;
-            this.Btn_SelecGen.Click += new System.EventHandler(this.Btn_SelecGen_Click);
+            this.DGV_Genero.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Genero_CellClick);
             // 
             // Btn_ModificarGen
             // 
-            this.Btn_ModificarGen.Location = new System.Drawing.Point(746, 252);
+            this.Btn_ModificarGen.Location = new System.Drawing.Point(599, 211);
             this.Btn_ModificarGen.Name = "Btn_ModificarGen";
             this.Btn_ModificarGen.Size = new System.Drawing.Size(100, 50);
             this.Btn_ModificarGen.TabIndex = 12;
@@ -119,7 +109,7 @@ namespace capaPresentacion
             // 
             // Btn_EliminarGen
             // 
-            this.Btn_EliminarGen.Location = new System.Drawing.Point(920, 252);
+            this.Btn_EliminarGen.Location = new System.Drawing.Point(773, 211);
             this.Btn_EliminarGen.Name = "Btn_EliminarGen";
             this.Btn_EliminarGen.Size = new System.Drawing.Size(100, 50);
             this.Btn_EliminarGen.TabIndex = 13;
@@ -131,10 +121,9 @@ namespace capaPresentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 314);
+            this.ClientSize = new System.Drawing.Size(1009, 314);
             this.Controls.Add(this.Btn_EliminarGen);
             this.Controls.Add(this.Btn_ModificarGen);
-            this.Controls.Add(this.Btn_SelecGen);
             this.Controls.Add(this.DGV_Genero);
             this.Controls.Add(this.TxtB_NomGenero);
             this.Controls.Add(this.Btn_SalirGen);
@@ -156,7 +145,6 @@ namespace capaPresentacion
         private System.Windows.Forms.Button Btn_SalirGen;
         private System.Windows.Forms.TextBox TxtB_NomGenero;
         private System.Windows.Forms.DataGridView DGV_Genero;
-        private System.Windows.Forms.Button Btn_SelecGen;
         private System.Windows.Forms.Button Btn_ModificarGen;
         private System.Windows.Forms.Button Btn_EliminarGen;
     }

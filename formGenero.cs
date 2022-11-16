@@ -62,7 +62,6 @@ namespace capaPresentacion
             {
                 LlenarDgv();
             }
-
         }
 
         private void Btn_SalirGen_Click(object sender, EventArgs e)
@@ -70,9 +69,9 @@ namespace capaPresentacion
             this.Close();
         }
 
-        private void Btn_SelecGen_Click(object sender, EventArgs e)
+        private void Btn_SelecGen_Click(object sender, EventArgs e) //se lo reemplazo por el evento cellclick
         {
-            TxtB_NomGenero.Text = DGV_Genero.Rows[DGV_Genero.CurrentRow.Index].Cells[1].Value.ToString();
+           
 
         }
 
@@ -107,5 +106,11 @@ namespace capaPresentacion
                 MessageBox.Show("se produjo un error al eliminar el genero");
             }
         }
+
+        private void DGV_Genero_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            TxtB_NomGenero.Text = DGV_Genero.Rows[DGV_Genero.CurrentRow.Index].Cells[1].Value.ToString();
+        }
+
     }
 }

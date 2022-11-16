@@ -77,8 +77,8 @@ namespace Entidades
 
         private void BtnSelecAut_Click(object sender, EventArgs e)
         {
-            TxtBNomApeAut.Text = DGVAut.Rows[DGVAut.CurrentRow.Index].Cells[1].Value.ToString();
-        }
+           
+        }//se reemplazo por el evento cellclick
 
         private void Btn_ModificarAut_Click(object sender, EventArgs e)
         {
@@ -112,6 +112,11 @@ namespace Entidades
             {
                 MessageBox.Show("se produjo un error al modificar el autor");
             }
+        }
+
+        private void DGVAut_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            TxtBNomApeAut.Text = DGVAut.Rows[DGVAut.CurrentRow.Index].Cells[1].Value.ToString();
         }
     }
 }

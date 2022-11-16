@@ -35,12 +35,14 @@ namespace capaPresentacion
             this.entidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.librosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sociosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.generoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editorialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.librosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             menuStrip1 = new System.Windows.Forms.MenuStrip();
             menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +57,7 @@ namespace capaPresentacion
             menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.conexionToolStripMenuItem,
             this.entidadesToolStripMenuItem,
+            this.consultaToolStripMenuItem,
             this.prestamosToolStripMenuItem,
             this.salirToolStripMenuItem});
             menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
@@ -62,7 +65,7 @@ namespace capaPresentacion
             menuStrip1.Name = "menuStrip1";
             menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            menuStrip1.Size = new System.Drawing.Size(643, 43);
+            menuStrip1.Size = new System.Drawing.Size(702, 43);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -84,8 +87,8 @@ namespace capaPresentacion
             this.entidadesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.entidadesToolStripMenuItem.Name = "entidadesToolStripMenuItem";
             this.entidadesToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.entidadesToolStripMenuItem.Size = new System.Drawing.Size(125, 39);
-            this.entidadesToolStripMenuItem.Text = "Entidades";
+            this.entidadesToolStripMenuItem.Size = new System.Drawing.Size(71, 39);
+            this.entidadesToolStripMenuItem.Text = "Alta";
             this.entidadesToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // librosToolStripMenuItem
@@ -100,6 +103,27 @@ namespace capaPresentacion
             this.sociosToolStripMenuItem.Name = "sociosToolStripMenuItem";
             this.sociosToolStripMenuItem.Size = new System.Drawing.Size(270, 44);
             this.sociosToolStripMenuItem.Text = "Socios";
+            // 
+            // generoToolStripMenuItem
+            // 
+            this.generoToolStripMenuItem.Name = "generoToolStripMenuItem";
+            this.generoToolStripMenuItem.Size = new System.Drawing.Size(270, 44);
+            this.generoToolStripMenuItem.Text = "Genero";
+            this.generoToolStripMenuItem.Click += new System.EventHandler(this.generoToolStripMenuItem_Click_1);
+            // 
+            // editorialToolStripMenuItem
+            // 
+            this.editorialToolStripMenuItem.Name = "editorialToolStripMenuItem";
+            this.editorialToolStripMenuItem.Size = new System.Drawing.Size(270, 44);
+            this.editorialToolStripMenuItem.Text = "Editorial";
+            this.editorialToolStripMenuItem.Click += new System.EventHandler(this.editorialToolStripMenuItem_Click_1);
+            // 
+            // autorToolStripMenuItem
+            // 
+            this.autorToolStripMenuItem.Name = "autorToolStripMenuItem";
+            this.autorToolStripMenuItem.Size = new System.Drawing.Size(270, 44);
+            this.autorToolStripMenuItem.Text = "Autor";
+            this.autorToolStripMenuItem.Click += new System.EventHandler(this.autorToolStripMenuItem_Click_1);
             // 
             // prestamosToolStripMenuItem
             // 
@@ -125,26 +149,19 @@ namespace capaPresentacion
             this.label1.TabIndex = 0;
             this.label1.Text = "BIBLIOTECA POPULAR ALBERDI";
             // 
-            // generoToolStripMenuItem
+            // consultaToolStripMenuItem
             // 
-            this.generoToolStripMenuItem.Name = "generoToolStripMenuItem";
-            this.generoToolStripMenuItem.Size = new System.Drawing.Size(270, 44);
-            this.generoToolStripMenuItem.Text = "Genero";
-            this.generoToolStripMenuItem.Click += new System.EventHandler(this.generoToolStripMenuItem_Click_1);
+            this.consultaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.librosToolStripMenuItem1});
+            this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(113, 39);
+            this.consultaToolStripMenuItem.Text = "Consulta";
             // 
-            // editorialToolStripMenuItem
+            // librosToolStripMenuItem1
             // 
-            this.editorialToolStripMenuItem.Name = "editorialToolStripMenuItem";
-            this.editorialToolStripMenuItem.Size = new System.Drawing.Size(270, 44);
-            this.editorialToolStripMenuItem.Text = "Editorial";
-            this.editorialToolStripMenuItem.Click += new System.EventHandler(this.editorialToolStripMenuItem_Click_1);
-            // 
-            // autorToolStripMenuItem
-            // 
-            this.autorToolStripMenuItem.Name = "autorToolStripMenuItem";
-            this.autorToolStripMenuItem.Size = new System.Drawing.Size(270, 44);
-            this.autorToolStripMenuItem.Text = "Autor";
-            this.autorToolStripMenuItem.Click += new System.EventHandler(this.autorToolStripMenuItem_Click_1);
+            this.librosToolStripMenuItem1.Name = "librosToolStripMenuItem1";
+            this.librosToolStripMenuItem1.Size = new System.Drawing.Size(270, 44);
+            this.librosToolStripMenuItem1.Text = "Libros";
             // 
             // PPrin
             // 
@@ -177,6 +194,8 @@ namespace capaPresentacion
         private System.Windows.Forms.ToolStripMenuItem generoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editorialToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem autorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem librosToolStripMenuItem1;
     }
 }
 

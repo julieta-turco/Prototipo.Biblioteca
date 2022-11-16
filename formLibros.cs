@@ -16,10 +16,10 @@ namespace capaPresentacion
 {
     public partial class formLibros : Form
     {
-        Libros NuevoLibro;
+        //Libros NuevoLibro;
         Libros LibrosExistente;
         NegLibros DatosObjLibros = new NegLibros();
-        bool nuevo = true;
+        //bool nuevo = true;
         //int fila;
 
         public formLibros()
@@ -28,6 +28,7 @@ namespace capaPresentacion
             CrearDgv();
             LlenarDgv();
             LlenarCombos();
+            LimpiarTxt();
         }
 
         public void CrearDgv()
@@ -66,21 +67,29 @@ namespace capaPresentacion
         }
         void LlenarCombos()
         { //llena un combo desde una lista con descripcion y código
-
+            
             cb_NomApeAut.DataSource = DatosObjLibros.ObtenerAutor(); // se define el origen con la Lista
             cb_NomApeAut.DisplayMember = "P_NombreApellido";
             cb_NomApeAut.ValueMember = "P_IDAutor";
-            cb_NomApeAut.SelectedItem = null;
+            //cb_NomApeAut.SelectedItem = null;
 
             cb_EDITORIAL.DataSource = DatosObjLibros.ObtenerEditorial(); // se define el origen con la Lista
             cb_EDITORIAL.DisplayMember = "P_Nombre";
             cb_EDITORIAL.ValueMember = "P_IdEditorial";
-            cb_EDITORIAL.SelectedItem = null;
+            //cb_EDITORIAL.SelectedItem = null;
 
             cb_GENERO.DataSource = DatosObjLibros.ObtenerGenero(); // se define el origen con la Lista
             cb_GENERO.DisplayMember = "P_NombreGenero";
             cb_GENERO.ValueMember = "P_IDGenero";
-            cb_GENERO.SelectedItem = null;
+            //cb_GENERO.SelectedItem = null;
+        }
+        private void LimpiarTxt()
+        {
+            textBox_TITULO.Clear();
+            textBox_UBICACION.Clear();
+            cb_NomApeAut.Text = "";
+            cb_EDITORIAL.Text = "";
+            cb_GENERO.Text = "";
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -107,12 +116,13 @@ namespace capaPresentacion
             else
             {
                 LlenarDgv();
+                LimpiarTxt();
             }
         }
 
         private void btnSALIR_Click(object sender, EventArgs e)
         {
-            this.Close();
+            LimpiarTxt();
         }
  
         private void button1_Click(object sender, EventArgs e)
@@ -133,14 +143,9 @@ namespace capaPresentacion
             frmGen.Show();
         }
 
-        private void Seleccionar_Lib_Click_1(object sender, EventArgs e)
+        private void Seleccionar_Lib_Click_1(object sender, EventArgs e)//es reemplazado por el evento cellclick
         {
-            textBox_TITULO.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[1].Value.ToString();
-            textBox_UBICACION.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[2].Value.ToString();
-            cb_EDITORIAL.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[3].Value.ToString();
-            cb_NomApeAut.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[4].Value.ToString();            
-            cb_GENERO.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[5].Value.ToString();
-            checkBox1.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[6].Value.ToString();
+            
         }
 
         private void Modificar_Lib_Click_1(object sender, EventArgs e)
@@ -162,6 +167,7 @@ namespace capaPresentacion
             {
                 MessageBox.Show("Modificado con Exito");
                 LlenarDgv();
+                LimpiarTxt();
             }
             else
             {
@@ -171,17 +177,17 @@ namespace capaPresentacion
 
         private void Eliminar_Lib_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Esta Seguro que desea eliminarlo?");
+            MessageBox.Show("Esta Seguro que desea eliminarlo?","AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LibrosExistente = new Libros(int.Parse(DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[0].Value.ToString()),textBox_TITULO.Text, textBox_UBICACION.Text,  Convert.ToInt32(cb_EDITORIAL.SelectedValue), Convert.ToInt32(cb_NomApeAut.SelectedValue), Convert.ToInt32(cb_GENERO.SelectedValue), checkBox1.Checked);
 
-            Autor AutorExistente;
-            AutorExistente = new Autor(cb_NomApeAut.Text);
+            //Autor AutorExistente;
+            //AutorExistente = new Autor(cb_NomApeAut.Text);
 
-            Editorial editorialExistente;
-            editorialExistente = new Editorial(cb_EDITORIAL.Text);
+            //Editorial editorialExistente;
+            //editorialExistente = new Editorial(cb_EDITORIAL.Text);
 
-            Genero generoExistente;
-            generoExistente = new Genero(cb_GENERO.Text);
+            //Genero generoExistente;
+            //generoExistente = new Genero(cb_GENERO.Text);
 
 
             int nResultado = -1;
@@ -189,14 +195,26 @@ namespace capaPresentacion
             if (nResultado != -1)
             {
                 LlenarDgv();
+                LimpiarTxt();
             }
             else
             {
-                MessageBox.Show("se produjo un error al eliminar el Libro");
+                MessageBox.Show("se produjo un error al eliminar el Libro","AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        private void cb_NomApeAut_SelectedIndexChanged(object sender, EventArgs e)
+        private void DGV_ListaLibros_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox_TITULO.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[1].Value.ToString();
+            textBox_UBICACION.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[2].Value.ToString();
+            cb_EDITORIAL.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[3].Value.ToString();
+            cb_NomApeAut.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[4].Value.ToString();
+            cb_GENERO.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[5].Value.ToString();
+            checkBox1.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[6].Value.ToString();
+            
+        }
+
+        private void formLibros_Load(object sender, EventArgs e)
         {
 
         }

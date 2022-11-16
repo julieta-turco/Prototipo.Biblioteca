@@ -74,12 +74,9 @@ namespace capaPresentacion
             this.Close();
         }
 
-        private void BtnSelecEdit_Click(object sender, EventArgs e)
+        private void BtnSelecEdit_Click(object sender, EventArgs e)//se reemplazo con el evento cellclilck
         {
-            TxtBNombreEdit.Text = DGVEdit.Rows[DGVEdit.CurrentRow.Index].Cells[1].Value.ToString();
-            TxtBDireEdit.Text = DGVEdit.Rows[DGVEdit.CurrentRow.Index].Cells[2].Value.ToString();
-            TxtBNumEdit.Text = DGVEdit.Rows[DGVEdit.CurrentRow.Index].Cells[3].Value.ToString();
-            TxtBMailEdit.Text = DGVEdit.Rows[DGVEdit.CurrentRow.Index].Cells[4].Value.ToString();
+            
         }
 
         private void BtnModificarEdit_Click(object sender, EventArgs e)
@@ -100,6 +97,7 @@ namespace capaPresentacion
 
         private void BtnEliminarEdit_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Esta seguro que desea eliminar?");
             EditorialExistente = new Editorial(int.Parse(DGVEdit.Rows[DGVEdit.CurrentRow.Index].Cells[0].Value.ToString()), TxtBNombreEdit.Text, TxtBDireEdit.Text, int.Parse(TxtBNumEdit.Text), TxtBMailEdit.Text);
 
             int nResultado = -1;
@@ -112,6 +110,14 @@ namespace capaPresentacion
             {
                 MessageBox.Show("se produjo un error al eliminar la Editorial");
             }
+        }
+
+        private void DGVEdit_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            TxtBNombreEdit.Text = DGVEdit.Rows[DGVEdit.CurrentRow.Index].Cells[1].Value.ToString();
+            TxtBDireEdit.Text = DGVEdit.Rows[DGVEdit.CurrentRow.Index].Cells[2].Value.ToString();
+            TxtBNumEdit.Text = DGVEdit.Rows[DGVEdit.CurrentRow.Index].Cells[3].Value.ToString();
+            TxtBMailEdit.Text = DGVEdit.Rows[DGVEdit.CurrentRow.Index].Cells[4].Value.ToString();
         }
     }
 }

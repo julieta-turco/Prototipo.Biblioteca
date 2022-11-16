@@ -35,7 +35,6 @@ namespace Entidades
             this.Btn_AgregarAut = new System.Windows.Forms.Button();
             this.Btn_SalirAut = new System.Windows.Forms.Button();
             this.DGVAut = new System.Windows.Forms.DataGridView();
-            this.BtnSelecAut = new System.Windows.Forms.Button();
             this.Btn_ModificarAut = new System.Windows.Forms.Button();
             this.Btn_EliminarAut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAut)).BeginInit();
@@ -45,7 +44,7 @@ namespace Entidades
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Uighur", 33F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(60, 39);
+            this.label1.Location = new System.Drawing.Point(40, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(278, 86);
             this.label1.TabIndex = 0;
@@ -54,7 +53,7 @@ namespace Entidades
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 224);
+            this.label2.Location = new System.Drawing.Point(31, 185);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(136, 20);
             this.label2.TabIndex = 1;
@@ -62,14 +61,14 @@ namespace Entidades
             // 
             // TxtBNomApeAut
             // 
-            this.TxtBNomApeAut.Location = new System.Drawing.Point(201, 218);
+            this.TxtBNomApeAut.Location = new System.Drawing.Point(200, 179);
             this.TxtBNomApeAut.Name = "TxtBNomApeAut";
             this.TxtBNomApeAut.Size = new System.Drawing.Size(173, 26);
             this.TxtBNomApeAut.TabIndex = 4;
             // 
             // Btn_AgregarAut
             // 
-            this.Btn_AgregarAut.Location = new System.Drawing.Point(93, 307);
+            this.Btn_AgregarAut.Location = new System.Drawing.Point(92, 268);
             this.Btn_AgregarAut.Name = "Btn_AgregarAut";
             this.Btn_AgregarAut.Size = new System.Drawing.Size(75, 40);
             this.Btn_AgregarAut.TabIndex = 7;
@@ -79,7 +78,7 @@ namespace Entidades
             // 
             // Btn_SalirAut
             // 
-            this.Btn_SalirAut.Location = new System.Drawing.Point(232, 307);
+            this.Btn_SalirAut.Location = new System.Drawing.Point(231, 268);
             this.Btn_SalirAut.Name = "Btn_SalirAut";
             this.Btn_SalirAut.Size = new System.Drawing.Size(75, 40);
             this.Btn_SalirAut.TabIndex = 8;
@@ -90,26 +89,17 @@ namespace Entidades
             // DGVAut
             // 
             this.DGVAut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVAut.Location = new System.Drawing.Point(448, 91);
+            this.DGVAut.Location = new System.Drawing.Point(448, 35);
             this.DGVAut.Name = "DGVAut";
             this.DGVAut.RowHeadersWidth = 62;
             this.DGVAut.RowTemplate.Height = 28;
             this.DGVAut.Size = new System.Drawing.Size(593, 273);
             this.DGVAut.TabIndex = 9;
-            // 
-            // BtnSelecAut
-            // 
-            this.BtnSelecAut.Location = new System.Drawing.Point(495, 387);
-            this.BtnSelecAut.Name = "BtnSelecAut";
-            this.BtnSelecAut.Size = new System.Drawing.Size(100, 50);
-            this.BtnSelecAut.TabIndex = 10;
-            this.BtnSelecAut.Text = "Seleccionar";
-            this.BtnSelecAut.UseVisualStyleBackColor = true;
-            this.BtnSelecAut.Click += new System.EventHandler(this.BtnSelecAut_Click);
+            this.DGVAut.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAut_CellClick);
             // 
             // Btn_ModificarAut
             // 
-            this.Btn_ModificarAut.Location = new System.Drawing.Point(695, 387);
+            this.Btn_ModificarAut.Location = new System.Drawing.Point(599, 332);
             this.Btn_ModificarAut.Name = "Btn_ModificarAut";
             this.Btn_ModificarAut.Size = new System.Drawing.Size(100, 50);
             this.Btn_ModificarAut.TabIndex = 11;
@@ -119,7 +109,7 @@ namespace Entidades
             // 
             // Btn_EliminarAut
             // 
-            this.Btn_EliminarAut.Location = new System.Drawing.Point(899, 387);
+            this.Btn_EliminarAut.Location = new System.Drawing.Point(803, 332);
             this.Btn_EliminarAut.Name = "Btn_EliminarAut";
             this.Btn_EliminarAut.Size = new System.Drawing.Size(100, 50);
             this.Btn_EliminarAut.TabIndex = 12;
@@ -131,10 +121,9 @@ namespace Entidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1053, 450);
+            this.ClientSize = new System.Drawing.Size(1053, 397);
             this.Controls.Add(this.Btn_EliminarAut);
             this.Controls.Add(this.Btn_ModificarAut);
-            this.Controls.Add(this.BtnSelecAut);
             this.Controls.Add(this.DGVAut);
             this.Controls.Add(this.Btn_SalirAut);
             this.Controls.Add(this.Btn_AgregarAut);
@@ -157,7 +146,6 @@ namespace Entidades
         private System.Windows.Forms.Button Btn_AgregarAut;
         private System.Windows.Forms.Button Btn_SalirAut;
         private System.Windows.Forms.DataGridView DGVAut;
-        private System.Windows.Forms.Button BtnSelecAut;
         private System.Windows.Forms.Button Btn_ModificarAut;
         private System.Windows.Forms.Button Btn_EliminarAut;
     }
