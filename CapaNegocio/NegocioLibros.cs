@@ -25,7 +25,18 @@ namespace CapaNegocio
 
         public DataSet listadoLibrosBusuqeda(string cual, string tipo)
         {
-            return DatosObjLibros.listadoLibrosBusqueda(cual,tipo);
+            return DatosObjLibros.listadoLibrosBusqueda(cual,tipo);                
+        }
+
+        public Boolean EsValidoElTerminoDeBusqueda(string terminoBusqueda)
+        {
+            Boolean isValid = true;
+            foreach (char letra in terminoBusqueda)
+            {
+                if (!char.IsLetterOrDigit(letra))
+                    isValid = false;
+            }
+            return isValid;
         }
 
         #endregion

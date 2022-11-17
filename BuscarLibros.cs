@@ -41,29 +41,20 @@ namespace Entidades
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (rbTitulo.Checked)
+            string busqueda = txtBusqueda.Text;
+            bool terminoBusquedaValido = DatosObjAutor.EsValidoElTerminoDeBusqueda(busqueda);
+            if (terminoBusquedaValido)
             {
-                string busqueda = txtBusqueda.Text;
                 DataSet ds = new DataSet();
-                ds = DatosObjAutor.listadoLibrosBusuqeda(busqueda, "titulo");
-                if (ds.Tables[0].Rows.Count > 0)
+                if (rbTitulo.Checked)
                 {
-                    foreach (DataRow dr in ds.Tables[0].Rows)
-                    {
-                        DGVBuscarLib.Rows.Add(dr[0].ToString(), dr[1]);
-                    }
+                    ds = DatosObjAutor.listadoLibrosBusuqeda(busqueda, "titulo");
                 }
-                else
+                else if (rbUbicacion.Checked)
                 {
-                    MessageBox.Show("No hay autores cargados en la base de datos");
+                    ds = DatosObjAutor.listadoLibrosBusuqeda(busqueda, "ubicacion");
                 }
 
-            } else if (rbUbicacion.Checked)
-            {
-                string busqueda = txtBusqueda.Text;
-                DataSet ds = new DataSet();
-                ds = DatosObjAutor.listadoLibrosBusuqeda(busqueda, "ubicacion");
-                //DGVBuscarLib
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     foreach (DataRow dr in ds.Tables[0].Rows)
@@ -76,7 +67,8 @@ namespace Entidades
                     MessageBox.Show("No hay autores cargados en la base de datos");
                 }
             }
-
+            else
+                MessageBox.Show("No se permiten caracteres especiales");
         }
     }
 }
