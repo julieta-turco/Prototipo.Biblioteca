@@ -86,6 +86,43 @@ namespace capaDatos
             }
             return ds;
         }
+
+        public DataSet listadoLibrosBusqueda(string cual, string tipo)
+        {
+            string orden = string.Empty;
+
+            if(tipo == "ubicacion")
+            {
+                orden = "select * from Libros where ubicacion = '" + cual.Trim() + "';";
+            }
+            else
+            {
+                orden = "select * from Libros where titulo = '" + cual.Trim() + "';";
+            }
+
+            OleDbCommand cmd = new OleDbCommand(orden, conexion);
+
+            DataSet ds = new DataSet();
+            OleDbDataAdapter da = new OleDbDataAdapter();
+
+            try
+            {
+                Abrirconexion();
+                cmd.ExecuteNonQuery();
+                da.SelectCommand = cmd;
+                da.Fill(ds);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al listar los libros", e);
+            }
+            finally
+            {
+                Cerrarconexion();
+                cmd.Dispose();
+            }
+            return ds;
+        }
         #endregion
         #region Editorial
         public List<Editorial> ObtenerEditorial()

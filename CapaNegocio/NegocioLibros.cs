@@ -22,6 +22,12 @@ namespace CapaNegocio
         {
             return DatosObjLibros.listadoLibros(cual);
         }
+
+        public DataSet listadoLibrosBusuqeda(string cual, string tipo)
+        {
+            return DatosObjLibros.listadoLibrosBusqueda(cual,tipo);
+        }
+
         #endregion
         #region Autor
         AdministrarTablas DatosObjAutor = new AdministrarTablas();

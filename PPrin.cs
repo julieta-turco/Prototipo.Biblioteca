@@ -60,5 +60,11 @@ namespace capaPresentacion
         {
             this.Close();
         }
+
+        private void librosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            BuscarLibros frm = new BuscarLibros();
+            frm.Show();
+        }
     }
 }

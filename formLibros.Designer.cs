@@ -29,7 +29,7 @@ namespace capaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox_TITULO = new System.Windows.Forms.TextBox();
@@ -185,8 +185,8 @@ namespace capaPresentacion
             // 
             // DGV_ListaLibros
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Beige;
-            this.DGV_ListaLibros.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Beige;
+            this.DGV_ListaLibros.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DGV_ListaLibros.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.DGV_ListaLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_ListaLibros.Location = new System.Drawing.Point(608, 107);
