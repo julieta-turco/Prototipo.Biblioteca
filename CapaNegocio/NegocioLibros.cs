@@ -30,13 +30,13 @@ namespace CapaNegocio
 
         public Boolean EsValidoElTerminoDeBusqueda(string terminoBusqueda)
         {
-            Boolean isValid = true;
+            Boolean esValid = true;
             foreach (char letra in terminoBusqueda)
             {
                 if (!char.IsLetterOrDigit(letra))
-                    isValid = false;
+                    esValid = false;
             }
-            return isValid;
+            return esValid;
         }
 
         #endregion

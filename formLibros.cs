@@ -214,11 +214,5 @@ namespace capaPresentacion
             
         }
 
-        private void formLibros_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }

@@ -29,7 +29,7 @@ namespace capaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox_TITULO = new System.Windows.Forms.TextBox();
@@ -79,7 +79,7 @@ namespace capaPresentacion
             this.textBox_TITULO.Location = new System.Drawing.Point(162, 88);
             this.textBox_TITULO.Name = "textBox_TITULO";
             this.textBox_TITULO.Size = new System.Drawing.Size(306, 26);
-            this.textBox_TITULO.TabIndex = 6;
+            this.textBox_TITULO.TabIndex = 22;
             // 
             // textBox_UBICACION
             // 
@@ -95,7 +95,7 @@ namespace capaPresentacion
             this.btnAGREGAR.Location = new System.Drawing.Point(136, 548);
             this.btnAGREGAR.Name = "btnAGREGAR";
             this.btnAGREGAR.Size = new System.Drawing.Size(100, 100);
-            this.btnAGREGAR.TabIndex = 10;
+            this.btnAGREGAR.TabIndex = 11;
             this.btnAGREGAR.Text = "Agregar";
             this.btnAGREGAR.UseVisualStyleBackColor = false;
             this.btnAGREGAR.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -154,7 +154,7 @@ namespace capaPresentacion
             this.cb_GENERO.Location = new System.Drawing.Point(162, 290);
             this.cb_GENERO.Name = "cb_GENERO";
             this.cb_GENERO.Size = new System.Drawing.Size(306, 28);
-            this.cb_GENERO.TabIndex = 21;
+            this.cb_GENERO.TabIndex = 24;
             // 
             // cb_NomApeAut
             // 
@@ -162,7 +162,7 @@ namespace capaPresentacion
             this.cb_NomApeAut.Location = new System.Drawing.Point(162, 188);
             this.cb_NomApeAut.Name = "cb_NomApeAut";
             this.cb_NomApeAut.Size = new System.Drawing.Size(306, 28);
-            this.cb_NomApeAut.TabIndex = 22;
+            this.cb_NomApeAut.TabIndex = 23;
             // 
             // cb_EDITORIAL
             // 
@@ -170,7 +170,7 @@ namespace capaPresentacion
             this.cb_EDITORIAL.Location = new System.Drawing.Point(162, 238);
             this.cb_EDITORIAL.Name = "cb_EDITORIAL";
             this.cb_EDITORIAL.Size = new System.Drawing.Size(306, 28);
-            this.cb_EDITORIAL.TabIndex = 23;
+            this.cb_EDITORIAL.TabIndex = 21;
             // 
             // checkBox1
             // 
@@ -179,14 +179,14 @@ namespace capaPresentacion
             this.checkBox1.Location = new System.Drawing.Point(175, 358);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(49, 24);
-            this.checkBox1.TabIndex = 24;
+            this.checkBox1.TabIndex = 10;
             this.checkBox1.Text = "Si";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // DGV_ListaLibros
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Beige;
-            this.DGV_ListaLibros.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Beige;
+            this.DGV_ListaLibros.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DGV_ListaLibros.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.DGV_ListaLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_ListaLibros.Location = new System.Drawing.Point(608, 107);
@@ -307,7 +307,6 @@ namespace capaPresentacion
             this.Controls.Add(this.btnAGREGAR);
             this.Name = "formLibros";
             this.Text = "formLibros";
-            this.Load += new System.EventHandler(this.formLibros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_ListaLibros)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

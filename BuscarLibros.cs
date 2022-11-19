@@ -8,12 +8,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaNegocio;
+using capaDatos;
 
 namespace Entidades
 {
     public partial class BuscarLibros : Form
     {
-        NegLibros DatosObjAutor = new NegLibros();
+        NegLibros DatosObjLibros = new NegLibros();
+      
+        public BuscarLibros()
+        {
+            InitializeComponent();
+            CrearDgv();
+            LimpiarTxt();
+        }
         public void CrearDgv()
         {
             DGVBuscarLib.Columns.Add("0", "Id_Libro");
@@ -33,42 +42,56 @@ namespace Entidades
             DGVBuscarLib.Columns[5].Width = 50;
             DGVBuscarLib.Columns[6].Width = 50;
         }
-        public BuscarLibros()
+        private void LimpiarTxt()
         {
-            InitializeComponent();
-            this.CrearDgv();
+            txtBusqueda.Clear();
+            rbTitulo.Checked = false;
+            rbUbicacion.Checked = false;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string busqueda = txtBusqueda.Text;
-            bool terminoBusquedaValido = DatosObjAutor.EsValidoElTerminoDeBusqueda(busqueda);
+            bool terminoBusquedaValido = DatosObjLibros.EsValidoElTerminoDeBusqueda(busqueda);
             if (terminoBusquedaValido)
             {
                 DataSet ds = new DataSet();
                 if (rbTitulo.Checked)
                 {
-                    ds = DatosObjAutor.listadoLibrosBusuqeda(busqueda, "titulo");
+                    ds = DatosObjLibros.listadoLibrosBusuqeda(busqueda, "titulo");
                 }
                 else if (rbUbicacion.Checked)
                 {
-                    ds = DatosObjAutor.listadoLibrosBusuqeda(busqueda, "ubicacion");
+                    ds = DatosObjLibros.listadoLibrosBusuqeda(busqueda, "ubicacion");
                 }
 
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
-                        DGVBuscarLib.Rows.Add(dr[0].ToString(), dr[1]);
+                        DGVBuscarLib.Rows.Add(dr[0].ToString(), dr[1], dr[2], dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6]);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("No hay autores cargados en la base de datos");
+                    MessageBox.Show("No hay Libros con esa informacion cargados en la base de datos");
                 }
             }
             else
+            {
                 MessageBox.Show("No se permiten caracteres especiales");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LimpiarTxt(); 
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
     }
 }
