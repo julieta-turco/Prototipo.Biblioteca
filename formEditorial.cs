@@ -54,18 +54,34 @@ namespace capaPresentacion
 
         private void Btn_AgregarEdit_Click(object sender, EventArgs e)
         {
-            int nGrabados = -1;
-            AltaEditorial = new Editorial(TxtBNombreEdit.Text, TxtBDireEdit.Text, int.Parse(TxtBNumEdit.Text), TxtBMailEdit.Text);
+            string nombreEdit = TxtBNombreEdit.Text;
+            string direccion = TxtBDireEdit.Text;
+            string telefono = TxtBNumEdit.Text;
+            string mail = TxtBMailEdit.Text;
 
-            nGrabados = DatosObjEditorial.AbmEditorial("Alta", AltaEditorial);
 
-            if (nGrabados == -1)
+            if ((nombreEdit == "") || (direccion == "") || (telefono == "") || (mail == ""))
             {
-                MessageBox.Show("No se pudo grabar la editorial en el sistema");
+                MessageBox.Show("No debe dejar campos vacíos. Por favor completelos antes de continuar");
+                
             }
             else
             {
-                LlenarDgv();
+
+                int nGrabados = -1;
+                AltaEditorial = new Editorial(TxtBNombreEdit.Text, TxtBDireEdit.Text, int.Parse(TxtBNumEdit.Text), TxtBMailEdit.Text);
+
+                nGrabados = DatosObjEditorial.AbmEditorial("Alta", AltaEditorial);
+
+                if (nGrabados == -1)
+                {
+                    MessageBox.Show("No se pudo grabar la editorial en el sistema");
+                }
+                else
+                {
+                    LlenarDgv();
+                    MessageBox.Show("Editorial agregada con exito");
+                }
             }
         }
 
@@ -76,24 +92,37 @@ namespace capaPresentacion
 
         private void BtnSelecEdit_Click(object sender, EventArgs e)//se reemplazo con el evento cellclilck
         {
-            
+
         }
 
         private void BtnModificarEdit_Click(object sender, EventArgs e)
         {
-            EditorialExistente = new Editorial(int.Parse(DGVEdit.Rows[DGVEdit.CurrentRow.Index].Cells[0].Value.ToString()), TxtBNombreEdit.Text, TxtBDireEdit.Text, int.Parse(TxtBNumEdit.Text), TxtBMailEdit.Text);
+            string nombreEdit = TxtBNombreEdit.Text;
+            string direccion = TxtBDireEdit.Text;
+            string telefono = TxtBNumEdit.Text;
+            string mail = TxtBMailEdit.Text;
 
-            int nResultado = -1;
-            nResultado = DatosObjEditorial.AbmEditorial("Modificar", EditorialExistente);
-            if (nResultado != -1)
+
+            if ((nombreEdit == "") || (direccion == "") || (telefono == "") || (mail == ""))
             {
-                LlenarDgv();
+                MessageBox.Show("No debe dejar campos vacíos. Por favor completelos antes de continuar");
             }
             else
-            {
-                MessageBox.Show("se produjo un error al modificar la Editorial");
+            {            
+                EditorialExistente = new Editorial(int.Parse(DGVEdit.Rows[DGVEdit.CurrentRow.Index].Cells[0].Value.ToString()), TxtBNombreEdit.Text, TxtBDireEdit.Text, int.Parse(TxtBNumEdit.Text), TxtBMailEdit.Text);
+                int nResultado = -1;
+                nResultado = DatosObjEditorial.AbmEditorial("Modificar", EditorialExistente);
+               if (nResultado != -1)
+               {
+                LlenarDgv();
+                MessageBox.Show("Editorial modificada con exito");
+               }
+                else
+                    {
+                      MessageBox.Show("se produjo un error al modificar la Editorial");
+                     }
             }
-        }
+    }
 
         private void BtnEliminarEdit_Click(object sender, EventArgs e)
         {
@@ -105,6 +134,7 @@ namespace capaPresentacion
             if (nResultado != -1)
             {
                 LlenarDgv();
+                MessageBox.Show("Editorial eliminada con exito");
             }
             else
             {
@@ -118,6 +148,23 @@ namespace capaPresentacion
             TxtBDireEdit.Text = DGVEdit.Rows[DGVEdit.CurrentRow.Index].Cells[2].Value.ToString();
             TxtBNumEdit.Text = DGVEdit.Rows[DGVEdit.CurrentRow.Index].Cells[3].Value.ToString();
             TxtBMailEdit.Text = DGVEdit.Rows[DGVEdit.CurrentRow.Index].Cells[4].Value.ToString();
+        }
+
+        private void button1_volver_alta_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            formLibros frmLib = new formLibros();
+            frmLib.Show();
+        }
+
+        private void TxtBNumEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >=32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <=255) )
+            {
+                MessageBox.Show("Solo puede ingresar números", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

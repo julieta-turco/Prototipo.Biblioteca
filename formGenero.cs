@@ -48,19 +48,30 @@ namespace capaPresentacion
         }
         private void Btn_IngresarGen_Click(object sender, EventArgs e)
         {
-            int nGrabados = -1;
+            string nombreGen = TxtB_NomGenero.Text;
 
-            AltaGenero = new Genero(TxtB_NomGenero.Text);
-
-            nGrabados = DatosObjGenero.AbmGenero("Alta", AltaGenero);
-
-            if (nGrabados == -1)
+            if (nombreGen == "")
             {
-                MessageBox.Show("No se pudo grabar el genero en el sistema");
+                MessageBox.Show("No debe dejar el campo vacío. Por favor completelo antes de continuar");
             }
             else
             {
-                LlenarDgv();
+
+                int nGrabados = -1;
+
+                AltaGenero = new Genero(TxtB_NomGenero.Text);
+
+                nGrabados = DatosObjGenero.AbmGenero("Alta", AltaGenero);
+
+                if (nGrabados == -1)
+                {
+                    MessageBox.Show("No se pudo grabar el genero en el sistema");
+                }
+                else
+                {
+                    LlenarDgv();
+                    MessageBox.Show("Genero agregado con exito");
+                }
             }
         }
 
@@ -77,22 +88,34 @@ namespace capaPresentacion
 
         private void Btn_ModificarGen_Click(object sender, EventArgs e)
         {
-            GeneroExistente = new Genero(int.Parse(DGV_Genero.Rows[DGV_Genero.CurrentRow.Index].Cells[0].Value.ToString()), TxtB_NomGenero.Text);
+            string nombreGen = TxtB_NomGenero.Text;
 
-            int nResultado = -1;
-            nResultado = DatosObjGenero.AbmGenero("Modificar", GeneroExistente);
-            if (nResultado != -1)
+            if (nombreGen == "")
             {
-                LlenarDgv();
+                MessageBox.Show("No debe dejar el campo vacío. Por favor completelo antes de continuar");
             }
             else
             {
-                MessageBox.Show("se produjo un error al modificar el genero");
+
+                GeneroExistente = new Genero(int.Parse(DGV_Genero.Rows[DGV_Genero.CurrentRow.Index].Cells[0].Value.ToString()), TxtB_NomGenero.Text);
+
+                int nResultado = -1;
+                nResultado = DatosObjGenero.AbmGenero("Modificar", GeneroExistente);
+                if (nResultado != -1)
+                {
+                    LlenarDgv();
+                    MessageBox.Show("Genero modificado con exito");
+                }
+                else
+                {
+                    MessageBox.Show("se produjo un error al modificar el genero");
+                }
             }
         }
 
         private void Btn_EliminarGen_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Esta seguro que desea eliminar?");
             GeneroExistente = new Genero(int.Parse(DGV_Genero.Rows[DGV_Genero.CurrentRow.Index].Cells[0].Value.ToString()), TxtB_NomGenero.Text);
 
             int nResultado = -1;
@@ -100,6 +123,7 @@ namespace capaPresentacion
             if (nResultado != -1)
             {
                 LlenarDgv();
+                MessageBox.Show("Genero eliminado con exito");
             }
             else
             {
@@ -112,5 +136,11 @@ namespace capaPresentacion
             TxtB_NomGenero.Text = DGV_Genero.Rows[DGV_Genero.CurrentRow.Index].Cells[1].Value.ToString();
         }
 
+        private void button1_volver_alt_libro_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            formLibros frmLib = new formLibros();
+            frmLib.Show();
+        }
     }
 }

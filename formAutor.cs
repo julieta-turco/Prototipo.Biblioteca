@@ -52,27 +52,39 @@ namespace Entidades
         }
         private void Btn_AgregarAut_Click(object sender, EventArgs e)
         {
-            int nGrabados = -1;
-            //Autor NuevoAutor;
-            NuevoAutor = new Autor(TxtBNomApeAut.Text);
+            string nombreAut = TxtBNomApeAut.Text;
 
-            //NegLibros DatosObjAutor = new NegLibros();
-
-            nGrabados = DatosObjAutor.AbmAutor("Alta", NuevoAutor);
-
-            if (nGrabados == -1)
+            if (nombreAut == "")
             {
-                MessageBox.Show("No se pudo grabar el autor en el sistema");
+                MessageBox.Show("No debe dejar el campo vacío. Por favor completelo antes de continuar");
             }
             else
             {
-                LlenarDgv();
+
+                int nGrabados = -1;
+                //Autor NuevoAutor;
+                NuevoAutor = new Autor(TxtBNomApeAut.Text);
+
+                //NegLibros DatosObjAutor = new NegLibros();
+
+                nGrabados = DatosObjAutor.AbmAutor("Alta", NuevoAutor);
+
+                if (nGrabados == -1)
+                {
+                    MessageBox.Show("No se pudo grabar el autor en el sistema");
+                }
+                else
+                {
+                    LlenarDgv();
+                    MessageBox.Show("Autor agregado con exito");
+
+                }
             }
         }
 
         private void Btn_SalirAut_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close();            
         }
 
         private void BtnSelecAut_Click(object sender, EventArgs e)
@@ -82,23 +94,34 @@ namespace Entidades
 
         private void Btn_ModificarAut_Click(object sender, EventArgs e)
         {
-            AutorExistente = new Autor(int.Parse(DGVAut.Rows[DGVAut.CurrentRow.Index].Cells[0].Value.ToString()), TxtBNomApeAut.Text);
+            string nombreAut = TxtBNomApeAut.Text;
 
-
-            int nResultado = -1;
-            nResultado = DatosObjAutor.AbmAutor("Modificar", AutorExistente);
-            if (nResultado != -1)
+            if (nombreAut == "")
             {
-                LlenarDgv();
+                MessageBox.Show("No debe dejar el campo vacío. Por favor completelo antes de continuar");
             }
             else
             {
-                MessageBox.Show("se produjo un error al modificar el autor");
+                AutorExistente = new Autor(int.Parse(DGVAut.Rows[DGVAut.CurrentRow.Index].Cells[0].Value.ToString()), TxtBNomApeAut.Text);
+
+
+                int nResultado = -1;
+                nResultado = DatosObjAutor.AbmAutor("Modificar", AutorExistente);
+                if (nResultado != -1)
+                {
+                    LlenarDgv();
+                    MessageBox.Show("Autor modificado con exito");
+                }
+                else
+                {
+                    MessageBox.Show("se produjo un error al modificar el autor");
+                }
             }
         }
 
         private void Btn_EliminarAut_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Esta seguro que desea eliminar?");
             AutorExistente = new Autor(int.Parse(DGVAut.Rows[DGVAut.CurrentRow.Index].Cells[0].Value.ToString()), TxtBNomApeAut.Text);
 
 
@@ -107,6 +130,7 @@ namespace Entidades
             if (nResultado != -1)
             {
                 LlenarDgv();
+                MessageBox.Show("Autor eliminado con exito");
             }
             else
             {
@@ -117,6 +141,13 @@ namespace Entidades
         private void DGVAut_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             TxtBNomApeAut.Text = DGVAut.Rows[DGVAut.CurrentRow.Index].Cells[1].Value.ToString();
+        }
+
+        private void button1_volver_alta_libro_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            formLibros frmLib = new formLibros();
+            frmLib.Show();
         }
     }
 }

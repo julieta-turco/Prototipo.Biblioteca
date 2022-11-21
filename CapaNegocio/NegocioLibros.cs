@@ -25,15 +25,20 @@ namespace CapaNegocio
 
         public DataSet listadoLibrosBusuqeda(string cual, string tipo)
         {
-            return DatosObjLibros.listadoLibrosBusqueda(cual,tipo);                
+            return DatosObjLibros.listadoLibrosBusqueda(cual, tipo);
         }
 
         public Boolean EsValidoElTerminoDeBusqueda(string terminoBusqueda)
         {
             Boolean esValid = true;
-            foreach (char letra in terminoBusqueda)
+
+            foreach (char letra in terminoBusqueda) 
             {
-                if (!char.IsLetterOrDigit(letra))
+                if (!char.IsWhiteSpace(letra))
+
+                    esValid = false;
+                 else if (!char.IsLetterOrDigit(letra))
+
                     esValid = false;
             }
             return esValid;
@@ -72,6 +77,8 @@ namespace CapaNegocio
         {
             return DatosObjEditorial.ObtenerEditorial();
         }
+           
+
         #endregion
         #region Genero
         AdministrarTablas DatosObjGenero = new AdministrarTablas();

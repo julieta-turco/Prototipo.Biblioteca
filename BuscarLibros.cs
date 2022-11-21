@@ -16,7 +16,7 @@ namespace Entidades
     public partial class BuscarLibros : Form
     {
         NegLibros DatosObjLibros = new NegLibros();
-      
+
         public BuscarLibros()
         {
             InitializeComponent();
@@ -52,46 +52,63 @@ namespace Entidades
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string busqueda = txtBusqueda.Text;
-            bool terminoBusquedaValido = DatosObjLibros.EsValidoElTerminoDeBusqueda(busqueda);
-            if (terminoBusquedaValido)
-            {
-                DataSet ds = new DataSet();
-                if (rbTitulo.Checked)
-                {
-                    ds = DatosObjLibros.listadoLibrosBusuqeda(busqueda, "titulo");
-                }
-                else if (rbUbicacion.Checked)
-                {
-                    ds = DatosObjLibros.listadoLibrosBusuqeda(busqueda, "ubicacion");
-                }
+            bool titulo = rbTitulo.Checked;
+            bool ubic = rbUbicacion.Checked;
 
-                if (ds.Tables[0].Rows.Count > 0)
-                {
-                    foreach (DataRow dr in ds.Tables[0].Rows)
-                    {
-                        DGVBuscarLib.Rows.Add(dr[0].ToString(), dr[1], dr[2], dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6]);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("No hay Libros con esa informacion cargados en la base de datos");
-                }
+            if (txtBusqueda.Text == "") /*|| (titulo == false) || (ubic == false))*/
+            {
+                MessageBox.Show("No puede dejar campos vacíos, por favor completelos para continuar");
             }
             else
             {
-                MessageBox.Show("No se permiten caracteres especiales");
+                if ((titulo == false) && (ubic == false))
+                {
+                    MessageBox.Show("Por favor elija un criterio de busqueda");
+                }
+
+                else
+                {
+                    bool terminoBusquedaValido = DatosObjLibros.EsValidoElTerminoDeBusqueda(busqueda);
+                    if (terminoBusquedaValido)
+                    {
+                        DataSet ds = new DataSet();
+                        if (rbTitulo.Checked)
+                        {
+                            ds = DatosObjLibros.listadoLibrosBusuqeda(busqueda, "titulo");
+                        }
+                        else if (rbUbicacion.Checked)
+                        {
+                            ds = DatosObjLibros.listadoLibrosBusuqeda(busqueda, "ubicacion");
+                        }
+
+                        if (ds.Tables[0].Rows.Count > 0)
+                        {
+                            foreach (DataRow dr in ds.Tables[0].Rows)
+                            {
+                                DGVBuscarLib.Rows.Add(dr[0].ToString(), dr[1], dr[2], dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6]);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No hay Libros con esa informacion cargados en la base de datos");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se permiten caracteres especiales");
+                    }
+                }
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            LimpiarTxt(); 
+            LimpiarTxt();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
     }
 }

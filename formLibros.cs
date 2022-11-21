@@ -94,29 +94,34 @@ namespace capaPresentacion
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Libros NuevoLibro;
-            NuevoLibro = new Libros(textBox_TITULO.Text, textBox_UBICACION.Text,  Convert.ToInt32(cb_EDITORIAL.SelectedValue), Convert.ToInt32(cb_NomApeAut.SelectedValue), Convert.ToInt32(cb_GENERO.SelectedValue), checkBox1.Checked);
-            /*            
-            Editorial NuevaEditorial;
-            NuevaEditorial = new Editorial(cb_EDITORIAL.Text);
+            string nombreLi = textBox_TITULO.Text;
+            string ubi = textBox_UBICACION.Text;
+            string edit = cb_EDITORIAL.Text;
+            string aut = cb_NomApeAut.Text;
+            string gen = cb_GENERO.Text;
 
-            Autor NuevoAutor;
-            NuevoAutor = new Autor(cb_NomApeAut.Text);
 
-            Genero NuevoGenero;
-            NuevoGenero = new Genero(cb_GENERO.Text);
-            */
-            int nGrabados = -1;
-            nGrabados = DatosObjLibros.AbmLibros("Alta", NuevoLibro);
-
-            if (nGrabados == -1)
+            if ((nombreLi == "") || (ubi == "") || (edit == "") || (aut == "") || (gen == ""))
             {
-                MessageBox.Show("No se pudo grabar el libro en el sistema");
+                MessageBox.Show("No debe dejar el campo vacío. Por favor completelo antes de continuar");
             }
             else
             {
-                LlenarDgv();
-                LimpiarTxt();
+                Libros NuevoLibro;
+                NuevoLibro = new Libros(textBox_TITULO.Text, textBox_UBICACION.Text, Convert.ToInt32(cb_EDITORIAL.SelectedValue), Convert.ToInt32(cb_NomApeAut.SelectedValue), Convert.ToInt32(cb_GENERO.SelectedValue), checkBox1.Checked);
+                
+                int nGrabados = -1;
+                nGrabados = DatosObjLibros.AbmLibros("Alta", NuevoLibro);
+
+                if (nGrabados == -1)
+                {
+                    MessageBox.Show("No se pudo grabar el libro en el sistema");
+                }
+                else
+                {
+                    LlenarDgv();
+                    LimpiarTxt();
+                }
             }
         }
 
@@ -127,6 +132,7 @@ namespace capaPresentacion
  
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Close();
             formAutor frmAut = new formAutor();
             frmAut.Show();
         }
@@ -150,28 +156,43 @@ namespace capaPresentacion
 
         private void Modificar_Lib_Click_1(object sender, EventArgs e)
         {
-            LibrosExistente = new Libros(int.Parse(DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[0].Value.ToString()), textBox_TITULO.Text, textBox_UBICACION.Text, Convert.ToInt32(cb_EDITORIAL.SelectedValue), Convert.ToInt32(cb_NomApeAut.SelectedValue), Convert.ToInt32(cb_GENERO.SelectedValue), checkBox1.Checked);
+            string nombreLi = textBox_TITULO.Text;
+            string ubi = textBox_UBICACION.Text;
+            string edit = cb_EDITORIAL.Text;
+            string aut = cb_NomApeAut.Text;
+            string gen = cb_GENERO.Text;
 
-            Editorial editorialExistente;
-            editorialExistente = new Editorial(cb_EDITORIAL.Text); 
 
-            Autor AutorExistente;
-            AutorExistente = new Autor(cb_NomApeAut.Text);            
-
-            Genero generoExistente;
-            generoExistente = new Genero(cb_GENERO.Text);
-
-            int nResultado = -1;
-            nResultado = DatosObjLibros.AbmLibros("Modificar", LibrosExistente);
-            if (nResultado != -1)
+            if ((nombreLi == "") || (ubi == "") || (edit == "") || (aut == "") || (gen == ""))
             {
-                MessageBox.Show("Modificado con Exito");
-                LlenarDgv();
-                LimpiarTxt();
+                MessageBox.Show("No debe dejar el campo vacío. Por favor completelo antes de continuar");
             }
             else
             {
-                MessageBox.Show("se produjo un error al modificar el Libro");
+
+                LibrosExistente = new Libros(int.Parse(DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[0].Value.ToString()), textBox_TITULO.Text, textBox_UBICACION.Text, Convert.ToInt32(cb_EDITORIAL.SelectedValue), Convert.ToInt32(cb_NomApeAut.SelectedValue), Convert.ToInt32(cb_GENERO.SelectedValue), checkBox1.Checked);
+
+                Editorial editorialExistente;
+                editorialExistente = new Editorial(cb_EDITORIAL.Text);
+
+                Autor AutorExistente;
+                AutorExistente = new Autor(cb_NomApeAut.Text);
+
+                Genero generoExistente;
+                generoExistente = new Genero(cb_GENERO.Text);
+
+                int nResultado = -1;
+                nResultado = DatosObjLibros.AbmLibros("Modificar", LibrosExistente);
+                if (nResultado != -1)
+                {
+                    MessageBox.Show("Modificado con Exito");
+                    LlenarDgv();
+                    LimpiarTxt();
+                }
+                else
+                {
+                    MessageBox.Show("se produjo un error al modificar el Libro");
+                }
             }
         }
 
@@ -180,16 +201,7 @@ namespace capaPresentacion
             MessageBox.Show("Esta Seguro que desea eliminarlo?","AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LibrosExistente = new Libros(int.Parse(DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[0].Value.ToString()),textBox_TITULO.Text, textBox_UBICACION.Text,  Convert.ToInt32(cb_EDITORIAL.SelectedValue), Convert.ToInt32(cb_NomApeAut.SelectedValue), Convert.ToInt32(cb_GENERO.SelectedValue), checkBox1.Checked);
 
-            //Autor AutorExistente;
-            //AutorExistente = new Autor(cb_NomApeAut.Text);
-
-            //Editorial editorialExistente;
-            //editorialExistente = new Editorial(cb_EDITORIAL.Text);
-
-            //Genero generoExistente;
-            //generoExistente = new Genero(cb_GENERO.Text);
-
-
+            
             int nResultado = -1;
             nResultado = DatosObjLibros.AbmLibros("Baja", LibrosExistente);
             if (nResultado != -1)
@@ -214,5 +226,24 @@ namespace capaPresentacion
             
         }
 
+        private void cb_NomApeAut_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_TITULO_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

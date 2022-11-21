@@ -93,11 +93,13 @@ namespace capaDatos
 
             if(tipo == "ubicacion")
             {
-                orden = "select * from Libros where ubicacion = '" + cual.Trim() + "';";
+                //orden = "select * from Libros where ubicacion = '" + cual.Trim() + "';";
+                orden = "select * from Libros WHERE ubicacion LIKE '" + "%" + cual + "%';";
             }
             else
             {
-                orden = "select * from Libros where titulo = '" + cual.Trim() + "';";
+                //orden = "select * from Libros where titulo = '" + cual.Trim() + "';";
+                orden = "select * from Libros WHERE titulo LIKE '" + "%" + cual + "%';";
             }
 
             OleDbCommand cmd = new OleDbCommand(orden, conexion);
@@ -229,6 +231,8 @@ namespace capaDatos
             return ds;
 
         }
+              
+
         #endregion
         #region Autor
         public List<Autor> ObtenerAutor()
